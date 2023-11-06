@@ -22,9 +22,24 @@ class MenuCoordinator: Coordinator {
     }
     
     private func showMenuScreen(animated: Bool) {
-        let menuVM = MenuViewModel()
+        let menuVM: MenuViewModel = DIContainer.shared.resolve()
+        menuVM.delegate = self
         let menuVC = MenuViewController(viewModel: menuVM)
-        menuVC.navigationItem.title = "Меню"
+        menuVC.navigationItem.title = R.string.menu.menuTitle()
         navigationController.pushViewController(menuVC, animated: animated)
+    }
+}
+
+// MARK: - MenuViewModelDelegate
+extension MenuCoordinator: MenuViewModelDelegate {
+    func viewModelDidRequestToShowNextScreen(_ viewModel: MenuViewModel, with type: MenuCellType) {
+        switch type {
+        case .episodes:
+            show(EpisodesCoordinator.self, animated: true)
+        case .characters:
+            break
+        case .locations:
+            break
+        }
     }
 }

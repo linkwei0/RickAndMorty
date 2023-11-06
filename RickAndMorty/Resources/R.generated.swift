@@ -47,17 +47,60 @@ struct _R {
     let developmentRegion = "en"
   }
 
-  /// This `_R.string` struct is generated, and contains static references to 1 localization tables.
+  /// This `_R.string` struct is generated, and contains static references to 3 localization tables.
   struct string {
     let bundle: Foundation.Bundle
     let preferredLanguages: [String]?
     let locale: Locale?
+    var episodes: episodes { .init(source: .init(bundle: bundle, tableName: "Episodes", preferredLanguages: preferredLanguages, locale: locale)) }
+    var menu: menu { .init(source: .init(bundle: bundle, tableName: "Menu", preferredLanguages: preferredLanguages, locale: locale)) }
     var welcome: welcome { .init(source: .init(bundle: bundle, tableName: "Welcome", preferredLanguages: preferredLanguages, locale: locale)) }
 
+    func episodes(preferredLanguages: [String]) -> episodes {
+      .init(source: .init(bundle: bundle, tableName: "Episodes", preferredLanguages: preferredLanguages, locale: locale))
+    }
+    func menu(preferredLanguages: [String]) -> menu {
+      .init(source: .init(bundle: bundle, tableName: "Menu", preferredLanguages: preferredLanguages, locale: locale))
+    }
     func welcome(preferredLanguages: [String]) -> welcome {
       .init(source: .init(bundle: bundle, tableName: "Welcome", preferredLanguages: preferredLanguages, locale: locale))
     }
 
+
+    /// This `_R.string.episodes` struct is generated, and contains static references to 1 localization keys.
+    struct episodes {
+      let source: RswiftResources.StringResource.Source
+
+      /// Value: Эпизоды
+      ///
+      /// Key: episodes.title
+      var episodesTitle: RswiftResources.StringResource { .init(key: "episodes.title", tableName: "Episodes", source: source, developmentValue: nil, comment: nil) }
+    }
+
+    /// This `_R.string.menu` struct is generated, and contains static references to 4 localization keys.
+    struct menu {
+      let source: RswiftResources.StringResource.Source
+
+      /// Value: Персонажи
+      ///
+      /// Key: menu.cell.type.characters
+      var menuCellTypeCharacters: RswiftResources.StringResource { .init(key: "menu.cell.type.characters", tableName: "Menu", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Эпизоды
+      ///
+      /// Key: menu.cell.type.episodes
+      var menuCellTypeEpisodes: RswiftResources.StringResource { .init(key: "menu.cell.type.episodes", tableName: "Menu", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Локации
+      ///
+      /// Key: menu.cell.type.locations
+      var menuCellTypeLocations: RswiftResources.StringResource { .init(key: "menu.cell.type.locations", tableName: "Menu", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Меню
+      ///
+      /// Key: menu.title
+      var menuTitle: RswiftResources.StringResource { .init(key: "menu.title", tableName: "Menu", source: source, developmentValue: nil, comment: nil) }
+    }
 
     /// This `_R.string.welcome` struct is generated, and contains static references to 4 localization keys.
     struct welcome {
@@ -115,17 +158,17 @@ struct _R {
   struct image {
     let bundle: Foundation.Bundle
 
-    /// Image `default`.
-    var `default`: RswiftResources.ImageResource { .init(name: "default", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    /// Image `characters-image`.
+    var charactersImage: RswiftResources.ImageResource { .init(name: "characters-image", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
-    /// Image `episodes`.
-    var episodes: RswiftResources.ImageResource { .init(name: "episodes", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    /// Image `default-icon-image`.
+    var defaultIconImage: RswiftResources.ImageResource { .init(name: "default-icon-image", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
-    /// Image `launcher`.
-    var launcher: RswiftResources.ImageResource { .init(name: "launcher", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    /// Image `episodes-image`.
+    var episodesImage: RswiftResources.ImageResource { .init(name: "episodes-image", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
-    /// Image `locations`.
-    var locations: RswiftResources.ImageResource { .init(name: "locations", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+    /// Image `locations-image`.
+    var locationsImage: RswiftResources.ImageResource { .init(name: "locations-image", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
 
     /// Image `rick-and-morty-welcome-image`.
     var rickAndMortyWelcomeImage: RswiftResources.ImageResource { .init(name: "rick-and-morty-welcome-image", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }

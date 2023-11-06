@@ -8,16 +8,19 @@
 import UIKit
 
 extension UIView {
-    func applyGradient(colours: [UIColor]) -> CAGradientLayer {
-        return self.applyGradient(colours: colours, locations: nil)
-    }
-    
-    func applyGradient(colours: [UIColor], locations: [NSNumber]?) -> CAGradientLayer {
-        let gradient: CAGradientLayer = CAGradientLayer()
-        gradient.frame = self.bounds
-        gradient.colors = colours.map { $0.cgColor }
-        gradient.locations = locations
-        self.layer.insertSublayer(gradient, at: 0)
-        return gradient
+    func applyGradient(colours: [UIColor]) {
+        let gradientLayer: CAGradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colours[0].cgColor, colours[1].cgColor]
+        gradientLayer.frame = bounds
+        
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0)
+        
+        layer.insertSublayer(gradientLayer, at: 0)
+        
+        layer.cornerRadius = bounds.height / 2
+        layer.borderWidth = 1.0
+        layer.borderColor = UIColor.baseBlack.cgColor
+        clipsToBounds = true
     }
 }

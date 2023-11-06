@@ -28,7 +28,7 @@ class WelcomeCoordinator: Coordinator {
     }
     
     private func showWelcomeScreen(animated: Bool) {
-        let welcomeVM = WelcomeViewModel()
+        let welcomeVM: WelcomeViewModel = DIContainer.shared.resolve()
         welcomeVM.delegate = self
         let welcomeVC = WelcomeViewController(viewModel: welcomeVM)
         welcomeVC.navigationItem.title = R.string.welcome.welcomeTitle()

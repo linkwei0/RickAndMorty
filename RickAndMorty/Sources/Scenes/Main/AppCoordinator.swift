@@ -13,6 +13,8 @@ class AppCoordinator: Coordinator {
     var onDidFinish: (() -> Void)?
     
     let navigationController: NavigationController
+    
+    private var userInSystem: DataStoreProtocol = DIContainer.shared.resolve()
 
     // MARK: - Init
     required init(navigationController: NavigationController) {
@@ -21,7 +23,11 @@ class AppCoordinator: Coordinator {
     
     // MARK: - Start
     func start(animated: Bool) {
-        showWelcomeScreen(animated: animated)
+        if userInSystem.welcomeInfo {
+            showMenuScreen(animated: animated)
+        } else {
+            showWelcomeScreen(animated: animated)
+        }
     }
     
     private func showMenuScreen(animated: Bool) {
@@ -65,6 +71,7 @@ class AppCoordinator: Coordinator {
 // MARK: - WelcomeCoordinatorDelegate
 extension AppCoordinator: WelcomeCoordinatorDelegate {
     func welcomeCoordinatorDidFinish(_ coordinator: WelcomeCoordinator) {
+        userInSystem.welcomeInfo = true
         resetCoordinators()
     }
 }

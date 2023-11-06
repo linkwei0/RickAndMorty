@@ -1,0 +1,11 @@
+/* 
+  Menu.strings
+  RickAndMorty
+*/
+
+"menu.title" = "Меню";
+
+"menu.cell.type.episodes" = "Эпизоды";
+"menu.cell.type.characters" = "Персонажи";
+"menu.cell.type.locations" = "Локации";
+
