@@ -1,0 +1,9 @@
+/* 
+  Welcome.strings
+  RickAndMorty
+*/
+
+"welcome.title" = "Рик и Морти";
+"welcome.label.title" = "Добро пожаловать!";
+"welcome.label.info" = "В этому приложение Вы познакомитесь со Вселенной мультфильма Рик и Морти";
+"welcome.button.title" = "Начать";
