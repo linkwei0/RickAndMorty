@@ -38,6 +38,20 @@
 		AD402CF72AF8F4F600CBAA03 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402CF62AF8F4F600CBAA03 /* EpisodesViewController.swift */; };
 		AD402CFA2AF8F56800CBAA03 /* EpisodesAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402CF92AF8F56800CBAA03 /* EpisodesAssembly.swift */; };
 		AD402CFC2AF8F5E900CBAA03 /* Episodes.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD402CFB2AF8F5E900CBAA03 /* Episodes.strings */; };
+		AD402D002AF8F8FA00CBAA03 /* HasEpisodesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402CFF2AF8F8FA00CBAA03 /* HasEpisodesService.swift */; };
+		AD402D022AF8FABD00CBAA03 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D012AF8FABD00CBAA03 /* NetworkService.swift */; };
+		AD402D0A2AF8FF9E00CBAA03 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D092AF8FF9E00CBAA03 /* Endpoint.swift */; };
+		AD402D0C2AF9006600CBAA03 /* URLRequest+Headers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D0B2AF9006600CBAA03 /* URLRequest+Headers.swift */; };
+		AD402D0E2AF9012100CBAA03 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D0D2AF9012100CBAA03 /* NetworkConfiguration.swift */; };
+		AD402D102AF9018F00CBAA03 /* EpisodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D0F2AF9018F00CBAA03 /* EpisodeService.swift */; };
+		AD402D122AF901DD00CBAA03 /* EpisodeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D112AF901DD00CBAA03 /* EpisodeEndpoint.swift */; };
+		AD402D392AFCC93F00CBAA03 /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D382AFCC93F00CBAA03 /* EpisodeModel.swift */; };
+		AD402D3C2AFCC9BA00CBAA03 /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D3B2AFCC9BA00CBAA03 /* HTTPStatusCode.swift */; };
+		AD402D3E2AFCC9C400CBAA03 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D3D2AFCC9C400CBAA03 /* APIError.swift */; };
+		AD402D422AFCCA5000CBAA03 /* EpisodeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D412AFCCA5000CBAA03 /* EpisodeApi.swift */; };
+		AD402D442AFCCA7100CBAA03 /* InfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D432AFCCA7100CBAA03 /* InfoApi.swift */; };
+		AD402D462AFCCA7E00CBAA03 /* EpisodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D452AFCCA7E00CBAA03 /* EpisodeResult.swift */; };
+		AD402D492AFCCAB500CBAA03 /* DomainConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D482AFCCAB500CBAA03 /* DomainConvertable.swift */; };
 		ADFECCA32AF65AAE001FF541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFECCA22AF65AAE001FF541 /* AppDelegate.swift */; };
 		ADFECCA52AF65AAE001FF541 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFECCA42AF65AAE001FF541 /* SceneDelegate.swift */; };
 		ADFECCAC2AF65AB0001FF541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADFECCAB2AF65AB0001FF541 /* Assets.xcassets */; };
@@ -84,6 +98,20 @@
 		AD402CF62AF8F4F600CBAA03 /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
 		AD402CF92AF8F56800CBAA03 /* EpisodesAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesAssembly.swift; sourceTree = "<group>"; };
 		AD402CFB2AF8F5E900CBAA03 /* Episodes.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Episodes.strings; sourceTree = "<group>"; };
+		AD402CFF2AF8F8FA00CBAA03 /* HasEpisodesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasEpisodesService.swift; sourceTree = "<group>"; };
+		AD402D012AF8FABD00CBAA03 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AD402D092AF8FF9E00CBAA03 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		AD402D0B2AF9006600CBAA03 /* URLRequest+Headers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Headers.swift"; sourceTree = "<group>"; };
+		AD402D0D2AF9012100CBAA03 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
+		AD402D0F2AF9018F00CBAA03 /* EpisodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeService.swift; sourceTree = "<group>"; };
+		AD402D112AF901DD00CBAA03 /* EpisodeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeEndpoint.swift; sourceTree = "<group>"; };
+		AD402D382AFCC93F00CBAA03 /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
+		AD402D3B2AFCC9BA00CBAA03 /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatusCode.swift; sourceTree = "<group>"; };
+		AD402D3D2AFCC9C400CBAA03 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		AD402D412AFCCA5000CBAA03 /* EpisodeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeApi.swift; sourceTree = "<group>"; };
+		AD402D432AFCCA7100CBAA03 /* InfoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoApi.swift; sourceTree = "<group>"; };
+		AD402D452AFCCA7E00CBAA03 /* EpisodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeResult.swift; sourceTree = "<group>"; };
+		AD402D482AFCCAB500CBAA03 /* DomainConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConvertable.swift; sourceTree = "<group>"; };
 		ADFECC9F2AF65AAE001FF541 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFECCA22AF65AAE001FF541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADFECCA42AF65AAE001FF541 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +167,7 @@
 			children = (
 				AD402CC02AF7A22C00CBAA03 /* UIFont+AppFonts.swift */,
 				AD402CC92AF7AC1E00CBAA03 /* UIView+Gradient.swift */,
+				AD402D0B2AF9006600CBAA03 /* URLRequest+Headers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -191,8 +220,8 @@
 		AD402CCF2AF8CE9E00CBAA03 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				AD402CD02AF8CEC200CBAA03 /* DataStoreProtocol.swift */,
-				AD402CD22AF8CF1E00CBAA03 /* DataStoreService.swift */,
+				AD402D042AF8FB3000CBAA03 /* Network */,
+				AD402D032AF8FB2000CBAA03 /* Data Store */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -278,6 +307,82 @@
 			path = Layouts;
 			sourceTree = "<group>";
 		};
+		AD402D032AF8FB2000CBAA03 /* Data Store */ = {
+			isa = PBXGroup;
+			children = (
+				AD402CD02AF8CEC200CBAA03 /* DataStoreProtocol.swift */,
+				AD402CD22AF8CF1E00CBAA03 /* DataStoreService.swift */,
+			);
+			path = "Data Store";
+			sourceTree = "<group>";
+		};
+		AD402D042AF8FB3000CBAA03 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AD402D092AF8FF9E00CBAA03 /* Endpoint.swift */,
+				AD402D472AFCCAA600CBAA03 /* Protocols */,
+				AD402D402AFCCA4200CBAA03 /* Results */,
+				AD402D3F2AFCCA1100CBAA03 /* Model */,
+				AD402D3A2AFCC9A100CBAA03 /* NetworkService */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AD402D372AFCC92100CBAA03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD402D382AFCC93F00CBAA03 /* EpisodeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AD402D3A2AFCC9A100CBAA03 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				AD402D012AF8FABD00CBAA03 /* NetworkService.swift */,
+				AD402D0D2AF9012100CBAA03 /* NetworkConfiguration.swift */,
+				AD402D3B2AFCC9BA00CBAA03 /* HTTPStatusCode.swift */,
+				AD402D3D2AFCC9C400CBAA03 /* APIError.swift */,
+				AD402D4A2AFCCB3B00CBAA03 /* NetworkService+Episode */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		AD402D3F2AFCCA1100CBAA03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD402D412AFCCA5000CBAA03 /* EpisodeApi.swift */,
+				AD402D432AFCCA7100CBAA03 /* InfoApi.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AD402D402AFCCA4200CBAA03 /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				AD402D452AFCCA7E00CBAA03 /* EpisodeResult.swift */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
+		AD402D472AFCCAA600CBAA03 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				AD402D482AFCCAB500CBAA03 /* DomainConvertable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		AD402D4A2AFCCB3B00CBAA03 /* NetworkService+Episode */ = {
+			isa = PBXGroup;
+			children = (
+				AD402CFF2AF8F8FA00CBAA03 /* HasEpisodesService.swift */,
+				AD402D0F2AF9018F00CBAA03 /* EpisodeService.swift */,
+				AD402D112AF901DD00CBAA03 /* EpisodeEndpoint.swift */,
+			);
+			path = "NetworkService+Episode";
+			sourceTree = "<group>";
+		};
 		ADFECC962AF65AAE001FF541 = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +415,7 @@
 		ADFECCB62AF65BFC001FF541 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				AD402D372AFCC92100CBAA03 /* Model */,
 				AD402CE02AF8D83D00CBAA03 /* Protocols */,
 				AD402CCF2AF8CE9E00CBAA03 /* Services */,
 				AD402CCE2AF8CE9A00CBAA03 /* DI */,
@@ -539,6 +645,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD402CD92AF8D4BE00CBAA03 /* SceneAssembly.swift in Sources */,
+				AD402D492AFCCAB500CBAA03 /* DomainConvertable.swift in Sources */,
 				AD402CE42AF8D8C100CBAA03 /* MenuCell.swift in Sources */,
 				AD402CBF2AF7A20900CBAA03 /* TextStyle.swift in Sources */,
 				AD402CD52AF8D08800CBAA03 /* DIContainer.swift in Sources */,
@@ -548,8 +655,15 @@
 				ADFECCC12AF66073001FF541 /* NavigationController.swift in Sources */,
 				ADFECCBF2AF6604E001FF541 /* ConfigurableCoordinator.swift in Sources */,
 				AD402CF32AF8F4D300CBAA03 /* EpisodesCoordinator.swift in Sources */,
+				AD402D0C2AF9006600CBAA03 /* URLRequest+Headers.swift in Sources */,
+				AD402D3E2AFCC9C400CBAA03 /* APIError.swift in Sources */,
+				AD402D422AFCCA5000CBAA03 /* EpisodeApi.swift in Sources */,
+				AD402D0E2AF9012100CBAA03 /* NetworkConfiguration.swift in Sources */,
+				AD402D442AFCCA7100CBAA03 /* InfoApi.swift in Sources */,
 				AD402CE82AF8DBE500CBAA03 /* MenuGalleryCollectionLayout.swift in Sources */,
 				AD402CCD2AF7AD2D00CBAA03 /* GradientButton.swift in Sources */,
+				AD402D392AFCC93F00CBAA03 /* EpisodeModel.swift in Sources */,
+				AD402D3C2AFCC9BA00CBAA03 /* HTTPStatusCode.swift in Sources */,
 				AD402CCA2AF7AC1E00CBAA03 /* UIView+Gradient.swift in Sources */,
 				AD402CC82AF7A4C000CBAA03 /* WelcomeCoordinator.swift in Sources */,
 				AD175B532AF79A7B008684F5 /* MenuViewModel.swift in Sources */,
@@ -564,15 +678,21 @@
 				ADFECCC32AF6613F001FF541 /* NavigationPopObserver.swift in Sources */,
 				ADFECCC82AF66378001FF541 /* AppCoordinator.swift in Sources */,
 				AD402CFA2AF8F56800CBAA03 /* EpisodesAssembly.swift in Sources */,
+				AD402D002AF8F8FA00CBAA03 /* HasEpisodesService.swift in Sources */,
 				AD402CD12AF8CEC200CBAA03 /* DataStoreProtocol.swift in Sources */,
 				AD402CE22AF8D85500CBAA03 /* ReuseIdentifiable.swift in Sources */,
+				AD402D102AF9018F00CBAA03 /* EpisodeService.swift in Sources */,
 				AD402CD32AF8CF1E00CBAA03 /* DataStoreService.swift in Sources */,
 				AD402CF52AF8F4EF00CBAA03 /* EpisodesViewModel.swift in Sources */,
 				AD402CBD2AF7A1F400CBAA03 /* Label.swift in Sources */,
 				AD402CF72AF8F4F600CBAA03 /* EpisodesViewController.swift in Sources */,
+				AD402D0A2AF8FF9E00CBAA03 /* Endpoint.swift in Sources */,
 				AD402CDD2AF8D5E100CBAA03 /* MenuAssembly.swift in Sources */,
+				AD402D022AF8FABD00CBAA03 /* NetworkService.swift in Sources */,
+				AD402D462AFCCA7E00CBAA03 /* EpisodeResult.swift in Sources */,
 				AD402CD72AF8D0FD00CBAA03 /* DataSourceAssembly.swift in Sources */,
 				AD402CE62AF8DBC400CBAA03 /* MenuListCollectionLayout.swift in Sources */,
+				AD402D122AF901DD00CBAA03 /* EpisodeEndpoint.swift in Sources */,
 				ADFECCA52AF65AAE001FF541 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

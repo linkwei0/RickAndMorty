@@ -25,6 +25,7 @@ class EpisodesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        viewModel.viewIsReady()
     }
     
     // MARK: - Setup

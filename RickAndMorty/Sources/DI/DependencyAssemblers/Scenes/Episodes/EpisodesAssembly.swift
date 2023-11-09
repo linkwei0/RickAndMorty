@@ -10,8 +10,13 @@ import Swinject
 
 final class EpisodesAssembly: Assembly {
     func assemble(container: Container) {
-        container.register(EpisodesViewModel.self) { _ in
-            return EpisodesViewModel()
+        container.register(EpisodeServiceProtocol.self) { _ in
+            return EpisodeService()
+        }
+        
+        container.register(EpisodesViewModel.self) { resolver in
+            guard let episodeService = resolver.resolve(EpisodeServiceProtocol.self) else { fatalError() }
+            return EpisodesViewModel(episodeService: episodeService)
         }
     }
 }
