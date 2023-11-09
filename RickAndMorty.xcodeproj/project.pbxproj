@@ -52,6 +52,14 @@
 		AD402D442AFCCA7100CBAA03 /* InfoApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D432AFCCA7100CBAA03 /* InfoApi.swift */; };
 		AD402D462AFCCA7E00CBAA03 /* EpisodeResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D452AFCCA7E00CBAA03 /* EpisodeResult.swift */; };
 		AD402D492AFCCAB500CBAA03 /* DomainConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D482AFCCAB500CBAA03 /* DomainConvertable.swift */; };
+		AD402D4E2AFCCE0D00CBAA03 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D4D2AFCCE0D00CBAA03 /* EpisodeCell.swift */; };
+		AD402D522AFCD13500CBAA03 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D512AFCD13500CBAA03 /* TableViewDataSource.swift */; };
+		AD402D542AFCD1B400CBAA03 /* TableViewDataSourceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D532AFCD1B400CBAA03 /* TableViewDataSourceProtocols.swift */; };
+		AD402D562AFCD22200CBAA03 /* TableSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D552AFCD22200CBAA03 /* TableSectionViewModel.swift */; };
+		AD402D582AFCD3EF00CBAA03 /* EpisodeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D572AFCD3EF00CBAA03 /* EpisodeCellViewModel.swift */; };
+		AD402D5A2AFCD5A900CBAA03 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D592AFCD5A900CBAA03 /* Bindable.swift */; };
+		AD402D5C2AFCF96800CBAA03 /* EpisodeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D5B2AFCF96800CBAA03 /* EpisodeHeaderView.swift */; };
+		AD402D5E2AFCF97200CBAA03 /* EpisodeHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D5D2AFCF97200CBAA03 /* EpisodeHeaderViewModel.swift */; };
 		ADFECCA32AF65AAE001FF541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFECCA22AF65AAE001FF541 /* AppDelegate.swift */; };
 		ADFECCA52AF65AAE001FF541 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFECCA42AF65AAE001FF541 /* SceneDelegate.swift */; };
 		ADFECCAC2AF65AB0001FF541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADFECCAB2AF65AB0001FF541 /* Assets.xcassets */; };
@@ -112,6 +120,14 @@
 		AD402D432AFCCA7100CBAA03 /* InfoApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoApi.swift; sourceTree = "<group>"; };
 		AD402D452AFCCA7E00CBAA03 /* EpisodeResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeResult.swift; sourceTree = "<group>"; };
 		AD402D482AFCCAB500CBAA03 /* DomainConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainConvertable.swift; sourceTree = "<group>"; };
+		AD402D4D2AFCCE0D00CBAA03 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
+		AD402D512AFCD13500CBAA03 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		AD402D532AFCD1B400CBAA03 /* TableViewDataSourceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceProtocols.swift; sourceTree = "<group>"; };
+		AD402D552AFCD22200CBAA03 /* TableSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionViewModel.swift; sourceTree = "<group>"; };
+		AD402D572AFCD3EF00CBAA03 /* EpisodeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellViewModel.swift; sourceTree = "<group>"; };
+		AD402D592AFCD5A900CBAA03 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		AD402D5B2AFCF96800CBAA03 /* EpisodeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeHeaderView.swift; sourceTree = "<group>"; };
+		AD402D5D2AFCF97200CBAA03 /* EpisodeHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeHeaderViewModel.swift; sourceTree = "<group>"; };
 		ADFECC9F2AF65AAE001FF541 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFECCA22AF65AAE001FF541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADFECCA42AF65AAE001FF541 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -276,6 +292,10 @@
 				AD402CF22AF8F4D300CBAA03 /* EpisodesCoordinator.swift */,
 				AD402CF42AF8F4EF00CBAA03 /* EpisodesViewModel.swift */,
 				AD402CF62AF8F4F600CBAA03 /* EpisodesViewController.swift */,
+				AD402D4D2AFCCE0D00CBAA03 /* EpisodeCell.swift */,
+				AD402D572AFCD3EF00CBAA03 /* EpisodeCellViewModel.swift */,
+				AD402D5B2AFCF96800CBAA03 /* EpisodeHeaderView.swift */,
+				AD402D5D2AFCF97200CBAA03 /* EpisodeHeaderViewModel.swift */,
 			);
 			path = Episodes;
 			sourceTree = "<group>";
@@ -383,6 +403,25 @@
 			path = "NetworkService+Episode";
 			sourceTree = "<group>";
 		};
+		AD402D4F2AFCD12200CBAA03 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AD402D502AFCD12900CBAA03 /* TableViewDataSource */,
+				AD402D592AFCD5A900CBAA03 /* Bindable.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AD402D502AFCD12900CBAA03 /* TableViewDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				AD402D512AFCD13500CBAA03 /* TableViewDataSource.swift */,
+				AD402D532AFCD1B400CBAA03 /* TableViewDataSourceProtocols.swift */,
+				AD402D552AFCD22200CBAA03 /* TableSectionViewModel.swift */,
+			);
+			path = TableViewDataSource;
+			sourceTree = "<group>";
+		};
 		ADFECC962AF65AAE001FF541 = {
 			isa = PBXGroup;
 			children = (
@@ -415,6 +454,7 @@
 		ADFECCB62AF65BFC001FF541 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				AD402D4F2AFCD12200CBAA03 /* Helpers */,
 				AD402D372AFCC92100CBAA03 /* Model */,
 				AD402CE02AF8D83D00CBAA03 /* Protocols */,
 				AD402CCF2AF8CE9E00CBAA03 /* Services */,
@@ -654,25 +694,31 @@
 				AD175B5B2AF79E35008684F5 /* WelcomeViewModel.swift in Sources */,
 				ADFECCC12AF66073001FF541 /* NavigationController.swift in Sources */,
 				ADFECCBF2AF6604E001FF541 /* ConfigurableCoordinator.swift in Sources */,
+				AD402D522AFCD13500CBAA03 /* TableViewDataSource.swift in Sources */,
 				AD402CF32AF8F4D300CBAA03 /* EpisodesCoordinator.swift in Sources */,
 				AD402D0C2AF9006600CBAA03 /* URLRequest+Headers.swift in Sources */,
 				AD402D3E2AFCC9C400CBAA03 /* APIError.swift in Sources */,
 				AD402D422AFCCA5000CBAA03 /* EpisodeApi.swift in Sources */,
 				AD402D0E2AF9012100CBAA03 /* NetworkConfiguration.swift in Sources */,
 				AD402D442AFCCA7100CBAA03 /* InfoApi.swift in Sources */,
+				AD402D5E2AFCF97200CBAA03 /* EpisodeHeaderViewModel.swift in Sources */,
 				AD402CE82AF8DBE500CBAA03 /* MenuGalleryCollectionLayout.swift in Sources */,
+				AD402D4E2AFCCE0D00CBAA03 /* EpisodeCell.swift in Sources */,
 				AD402CCD2AF7AD2D00CBAA03 /* GradientButton.swift in Sources */,
 				AD402D392AFCC93F00CBAA03 /* EpisodeModel.swift in Sources */,
 				AD402D3C2AFCC9BA00CBAA03 /* HTTPStatusCode.swift in Sources */,
+				AD402D5A2AFCD5A900CBAA03 /* Bindable.swift in Sources */,
 				AD402CCA2AF7AC1E00CBAA03 /* UIView+Gradient.swift in Sources */,
 				AD402CC82AF7A4C000CBAA03 /* WelcomeCoordinator.swift in Sources */,
 				AD175B532AF79A7B008684F5 /* MenuViewModel.swift in Sources */,
 				ADFECCA32AF65AAE001FF541 /* AppDelegate.swift in Sources */,
+				AD402D582AFCD3EF00CBAA03 /* EpisodeCellViewModel.swift in Sources */,
 				AD175B5D2AF79E3C008684F5 /* WelcomeViewController.swift in Sources */,
 				AD402CC42AF7A3F300CBAA03 /* R.generated.swift in Sources */,
 				AD175B512AF79A5D008684F5 /* MenuViewController.swift in Sources */,
 				ADFECCC52AF66169001FF541 /* BaseViewController.swift in Sources */,
 				AD402CEA2AF8ECD900CBAA03 /* MenuCellViewModel.swift in Sources */,
+				AD402D562AFCD22200CBAA03 /* TableSectionViewModel.swift in Sources */,
 				AD175B552AF79A87008684F5 /* MenuCoordinator.swift in Sources */,
 				AD402CC12AF7A22C00CBAA03 /* UIFont+AppFonts.swift in Sources */,
 				ADFECCC32AF6613F001FF541 /* NavigationPopObserver.swift in Sources */,
@@ -680,6 +726,7 @@
 				AD402CFA2AF8F56800CBAA03 /* EpisodesAssembly.swift in Sources */,
 				AD402D002AF8F8FA00CBAA03 /* HasEpisodesService.swift in Sources */,
 				AD402CD12AF8CEC200CBAA03 /* DataStoreProtocol.swift in Sources */,
+				AD402D5C2AFCF96800CBAA03 /* EpisodeHeaderView.swift in Sources */,
 				AD402CE22AF8D85500CBAA03 /* ReuseIdentifiable.swift in Sources */,
 				AD402D102AF9018F00CBAA03 /* EpisodeService.swift in Sources */,
 				AD402CD32AF8CF1E00CBAA03 /* DataStoreService.swift in Sources */,
@@ -689,6 +736,7 @@
 				AD402D0A2AF8FF9E00CBAA03 /* Endpoint.swift in Sources */,
 				AD402CDD2AF8D5E100CBAA03 /* MenuAssembly.swift in Sources */,
 				AD402D022AF8FABD00CBAA03 /* NetworkService.swift in Sources */,
+				AD402D542AFCD1B400CBAA03 /* TableViewDataSourceProtocols.swift in Sources */,
 				AD402D462AFCCA7E00CBAA03 /* EpisodeResult.swift in Sources */,
 				AD402CD72AF8D0FD00CBAA03 /* DataSourceAssembly.swift in Sources */,
 				AD402CE62AF8DBC400CBAA03 /* MenuListCollectionLayout.swift in Sources */,

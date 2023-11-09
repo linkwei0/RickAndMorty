@@ -9,7 +9,7 @@ import Foundation
 
 struct EpisodeModel {
     let id: Int
-    let name: String?
-    let date: String?
-    let episodeSeason: String?
+    let name: String
+    let date: String
+    let episodeSeason: String
 }

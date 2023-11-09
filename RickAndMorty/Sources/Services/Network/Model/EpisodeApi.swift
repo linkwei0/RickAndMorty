@@ -9,9 +9,9 @@ import Foundation
 
 struct EpisodeApi: Decodable {
     let id: Int
-    let name: String?
-    let date: String?
-    let episodeSeason: String?
+    let name: String
+    let date: String
+    let episodeSeason: String
     
     private enum CodingKeys: String, CodingKey {
         case id, name

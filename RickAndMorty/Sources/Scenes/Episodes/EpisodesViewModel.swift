@@ -7,9 +7,13 @@
 
 import Foundation
 
-class EpisodesViewModel {
+class EpisodesViewModel: TableViewModel {
     // MARK: - Properties
-    private var episodes: [EpisodeModel] = []
+    var onDidUpdate: (() -> Void)?
+    
+    private(set) var sectionViewModels: [TableSectionViewModel] = []
+    
+    private var nextPage: Int = 0
     
     private let episodeService: EpisodeServiceProtocol
     
@@ -28,11 +32,23 @@ class EpisodesViewModel {
         episodeService.getEpisodes(page: page) { result in
             switch result {
             case .success(let episodeResult):
-                self.episodes = episodeResult.results.map { $0.asDomain() }
-                
+                let episodes = episodeResult.results.map { $0.asDomain() }
+                self.configureSections(with: episodes)
             case .failure(let error):
                 print("Failed to get episodes with error \(error)")
             }
         }
+    }
+    
+    private func configureSections(with episodes: [EpisodeModel]) {
+        sectionViewModels.removeAll()
+        let itemViewModels = episodes.map { EpisodeCellViewModel($0) }
+        if !itemViewModels.isEmpty {
+            let headerViewModel = EpisodeHeaderViewModel()
+            let section = TableSectionViewModel(headerViewModel: headerViewModel)
+            section.append(cellViewModels: itemViewModels)
+            self.sectionViewModels.append(section)
+        }
+        onDidUpdate?()
     }
 }
