@@ -13,6 +13,8 @@ class EpisodesViewController: BaseViewController {
     
     private let tableView = UITableView()
     
+    private var prefetchDataSource: TableViewDataSourcePrefetching?
+    
     private let viewModel: EpisodesViewModel
     
     // MARK: - Init
@@ -35,17 +37,12 @@ class EpisodesViewController: BaseViewController {
     
     // MARK: - Setup
     private func setup() {
-        setupBackground()
         setupTableView()
-    }
-    
-    private func setupBackground() {
-        view.backgroundColor = .accent
     }
     
     private func setupTableView() {
         view.addSubview(tableView)
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .accentYellow
         tableView.rowHeight = 60
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
@@ -57,27 +54,29 @@ class EpisodesViewController: BaseViewController {
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        dataSource.setup(tableView: tableView, viewModel: viewModel)
-        dataSource.onDidScroll = { [weak self] scrollView in
-            self?.handleScrollViewDidScroll(scrollView)
+        let test = TableViewDataSourcePrefetching(cellCount: viewModel.episodes.count,
+                                                  needsPrefetch: viewModel.needsPrefetch) { [weak self] in
+            self?.viewModel.viewIsReady()
         }
+        dataSource.setup(tableView: tableView, viewModel: viewModel)
     }
     
     // MARK: - Private methods
     private func reloadTableView() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+        prefetchDataSource = TableViewDataSourcePrefetching(cellCount: viewModel.episodes.count,
+                                                            needsPrefetch: viewModel.needsPrefetch) { [weak self] in
+            self?.viewModel.viewIsReady()
         }
-    }
-    
-    private func handleScrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("Scrolling")
+        tableView.prefetchDataSource = prefetchDataSource
+        tableView.reloadData()
     }
     
     // MARK: - Bindables
     private func setupBindables() {
-        viewModel.onDidUpdate = { [weak self] in
-            self?.reloadTableView()
+        viewModel.viewState.bind { [weak self] _ in
+            DispatchQueue.main.async {
+                self?.reloadTableView()
+            }
         }
     }
 }

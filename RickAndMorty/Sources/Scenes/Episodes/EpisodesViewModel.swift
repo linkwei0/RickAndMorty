@@ -7,13 +7,25 @@
 
 import Foundation
 
-class EpisodesViewModel: TableViewModel {
+class EpisodesViewModel: TableViewModel, SimpleViewStateHandleable {
     // MARK: - Properties
-    var onDidUpdate: (() -> Void)?
+    var sectionViewModels: [TableSectionViewModel] {
+        let itemCellViewModels = episodes.compactMap { EpisodeCellViewModel($0) }
+        let headerViewModel = EpisodeHeaderViewModel()
+        let section = TableSectionViewModel(headerViewModel: headerViewModel)
+        section.append(cellViewModels: itemCellViewModels)
+        return [section]
+    }
     
-    private(set) var sectionViewModels: [TableSectionViewModel] = []
+    var episodes: [EpisodeModel] {
+        return viewState.value.currentEntities
+    }
     
-    private var nextPage: Int = 0
+    var needsPrefetch: Bool {
+        return viewState.value.needsPrefetch
+    }
+    
+    private(set) var viewState: Bindable<SimpleViewState<EpisodeModel>> = Bindable(.initial)
     
     private let episodeService: EpisodeServiceProtocol
     
@@ -24,7 +36,7 @@ class EpisodesViewModel: TableViewModel {
     
     // MARK: - Public methods
     func viewIsReady() {
-        fetchEpisodes(page: 1)
+        fetchEpisodes(page: viewState.value.currentPage)
     }
     
     // MARK: - Private methods
@@ -32,23 +44,11 @@ class EpisodesViewModel: TableViewModel {
         episodeService.getEpisodes(page: page) { result in
             switch result {
             case .success(let episodeResult):
-                let episodes = episodeResult.results.map { $0.asDomain() }
-                self.configureSections(with: episodes)
+                let domainModels = episodeResult.results.map { $0.asDomain() }
+                self.viewState.value = self.handleableResult(domainModels, currentPage: page, currentEntities: self.episodes)
             case .failure(let error):
                 print("Failed to get episodes with error \(error)")
             }
         }
-    }
-    
-    private func configureSections(with episodes: [EpisodeModel]) {
-        sectionViewModels.removeAll()
-        let itemViewModels = episodes.map { EpisodeCellViewModel($0) }
-        if !itemViewModels.isEmpty {
-            let headerViewModel = EpisodeHeaderViewModel()
-            let section = TableSectionViewModel(headerViewModel: headerViewModel)
-            section.append(cellViewModels: itemViewModels)
-            self.sectionViewModels.append(section)
-        }
-        onDidUpdate?()
     }
 }

@@ -22,6 +22,11 @@ class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate 
         tableView.reloadData()
     }
     
+    func update(with viewModel: TableViewModel) {
+        self.viewModel = viewModel
+        tableView?.reloadData()
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel?.sectionViewModels.count ?? 0
     }

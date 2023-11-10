@@ -60,6 +60,9 @@
 		AD402D5A2AFCD5A900CBAA03 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D592AFCD5A900CBAA03 /* Bindable.swift */; };
 		AD402D5C2AFCF96800CBAA03 /* EpisodeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D5B2AFCF96800CBAA03 /* EpisodeHeaderView.swift */; };
 		AD402D5E2AFCF97200CBAA03 /* EpisodeHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D5D2AFCF97200CBAA03 /* EpisodeHeaderViewModel.swift */; };
+		AD402D602AFE280200CBAA03 /* SimpleViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D5F2AFE280200CBAA03 /* SimpleViewState.swift */; };
+		AD402D622AFE298E00CBAA03 /* SimpleViewStateHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D612AFE298E00CBAA03 /* SimpleViewStateHandleable.swift */; };
+		AD402D642AFE2E0200CBAA03 /* TableViewDataSourcePrefetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D632AFE2E0200CBAA03 /* TableViewDataSourcePrefetching.swift */; };
 		ADFECCA32AF65AAE001FF541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFECCA22AF65AAE001FF541 /* AppDelegate.swift */; };
 		ADFECCA52AF65AAE001FF541 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFECCA42AF65AAE001FF541 /* SceneDelegate.swift */; };
 		ADFECCAC2AF65AB0001FF541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADFECCAB2AF65AB0001FF541 /* Assets.xcassets */; };
@@ -128,6 +131,9 @@
 		AD402D592AFCD5A900CBAA03 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		AD402D5B2AFCF96800CBAA03 /* EpisodeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeHeaderView.swift; sourceTree = "<group>"; };
 		AD402D5D2AFCF97200CBAA03 /* EpisodeHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeHeaderViewModel.swift; sourceTree = "<group>"; };
+		AD402D5F2AFE280200CBAA03 /* SimpleViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewState.swift; sourceTree = "<group>"; };
+		AD402D612AFE298E00CBAA03 /* SimpleViewStateHandleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewStateHandleable.swift; sourceTree = "<group>"; };
+		AD402D632AFE2E0200CBAA03 /* TableViewDataSourcePrefetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourcePrefetching.swift; sourceTree = "<group>"; };
 		ADFECC9F2AF65AAE001FF541 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFECCA22AF65AAE001FF541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADFECCA42AF65AAE001FF541 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -406,6 +412,7 @@
 		AD402D4F2AFCD12200CBAA03 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				AD402D652AFE3E7000CBAA03 /* SimpleViewState */,
 				AD402D502AFCD12900CBAA03 /* TableViewDataSource */,
 				AD402D592AFCD5A900CBAA03 /* Bindable.swift */,
 			);
@@ -415,11 +422,29 @@
 		AD402D502AFCD12900CBAA03 /* TableViewDataSource */ = {
 			isa = PBXGroup;
 			children = (
+				AD402D662AFE3E8700CBAA03 /* DataSourcePrefetching */,
 				AD402D512AFCD13500CBAA03 /* TableViewDataSource.swift */,
 				AD402D532AFCD1B400CBAA03 /* TableViewDataSourceProtocols.swift */,
 				AD402D552AFCD22200CBAA03 /* TableSectionViewModel.swift */,
 			);
 			path = TableViewDataSource;
+			sourceTree = "<group>";
+		};
+		AD402D652AFE3E7000CBAA03 /* SimpleViewState */ = {
+			isa = PBXGroup;
+			children = (
+				AD402D5F2AFE280200CBAA03 /* SimpleViewState.swift */,
+				AD402D612AFE298E00CBAA03 /* SimpleViewStateHandleable.swift */,
+			);
+			path = SimpleViewState;
+			sourceTree = "<group>";
+		};
+		AD402D662AFE3E8700CBAA03 /* DataSourcePrefetching */ = {
+			isa = PBXGroup;
+			children = (
+				AD402D632AFE2E0200CBAA03 /* TableViewDataSourcePrefetching.swift */,
+			);
+			path = DataSourcePrefetching;
 			sourceTree = "<group>";
 		};
 		ADFECC962AF65AAE001FF541 = {
@@ -708,6 +733,7 @@
 				AD402D392AFCC93F00CBAA03 /* EpisodeModel.swift in Sources */,
 				AD402D3C2AFCC9BA00CBAA03 /* HTTPStatusCode.swift in Sources */,
 				AD402D5A2AFCD5A900CBAA03 /* Bindable.swift in Sources */,
+				AD402D622AFE298E00CBAA03 /* SimpleViewStateHandleable.swift in Sources */,
 				AD402CCA2AF7AC1E00CBAA03 /* UIView+Gradient.swift in Sources */,
 				AD402CC82AF7A4C000CBAA03 /* WelcomeCoordinator.swift in Sources */,
 				AD175B532AF79A7B008684F5 /* MenuViewModel.swift in Sources */,
@@ -725,12 +751,14 @@
 				ADFECCC82AF66378001FF541 /* AppCoordinator.swift in Sources */,
 				AD402CFA2AF8F56800CBAA03 /* EpisodesAssembly.swift in Sources */,
 				AD402D002AF8F8FA00CBAA03 /* HasEpisodesService.swift in Sources */,
+				AD402D602AFE280200CBAA03 /* SimpleViewState.swift in Sources */,
 				AD402CD12AF8CEC200CBAA03 /* DataStoreProtocol.swift in Sources */,
 				AD402D5C2AFCF96800CBAA03 /* EpisodeHeaderView.swift in Sources */,
 				AD402CE22AF8D85500CBAA03 /* ReuseIdentifiable.swift in Sources */,
 				AD402D102AF9018F00CBAA03 /* EpisodeService.swift in Sources */,
 				AD402CD32AF8CF1E00CBAA03 /* DataStoreService.swift in Sources */,
 				AD402CF52AF8F4EF00CBAA03 /* EpisodesViewModel.swift in Sources */,
+				AD402D642AFE2E0200CBAA03 /* TableViewDataSourcePrefetching.swift in Sources */,
 				AD402CBD2AF7A1F400CBAA03 /* Label.swift in Sources */,
 				AD402CF72AF8F4F600CBAA03 /* EpisodesViewController.swift in Sources */,
 				AD402D0A2AF8FF9E00CBAA03 /* Endpoint.swift in Sources */,

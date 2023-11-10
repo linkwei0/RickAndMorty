@@ -45,7 +45,7 @@ class EpisodeHeaderView: UITableViewHeaderFooterView, TableHeaderView {
     }
     
     private func setupBackground() {
-        contentView.backgroundColor = .accent
+        contentView.backgroundColor = .accentYellow
     }
     
     private func setupStackView() {
