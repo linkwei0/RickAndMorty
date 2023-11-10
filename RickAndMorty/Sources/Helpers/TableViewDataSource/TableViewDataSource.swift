@@ -68,4 +68,8 @@ class TableViewDataSource: NSObject, UITableViewDataSource, UITableViewDelegate 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         onDidScroll?(scrollView)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel?.sectionViewModels[indexPath.section].cellViewModels[indexPath.row].select()
+    }
 }

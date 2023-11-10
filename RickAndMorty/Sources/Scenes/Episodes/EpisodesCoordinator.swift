@@ -23,8 +23,17 @@ class EpisodesCoordinator: Coordinator {
     
     private func showEpisodesScreen(animated: Bool) {
         let viewModel: EpisodesViewModel = DIContainer.shared.resolve()
+        viewModel.delegate = self
         let viewController = EpisodesViewController(viewModel: viewModel)
         viewController.navigationItem.title = R.string.episodes.episodesTitle()
         navigationController.pushViewController(viewController, animated: animated)
+    }
+}
+
+// MARK: - EpisodesViewModelDelegate
+extension EpisodesCoordinator: EpisodesViewModelDelegate {
+    func viewModelDidRequestToShowEpisodeDetail(_ viewModel: EpisodesViewModel, episode: EpisodeModel) {
+        let configuration = EpisodeDetailCoordinatorConfiguration(episode: episode)
+        let coordinator = show(EpisodeDetailCoordinator.self, configuration: configuration, animated: true)
     }
 }

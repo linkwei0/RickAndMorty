@@ -7,10 +7,20 @@
 
 import Foundation
 
+protocol EpisodesViewModelDelegate: AnyObject {
+    func viewModelDidRequestToShowEpisodeDetail(_ viewModel: EpisodesViewModel, episode: EpisodeModel)
+}
+
 class EpisodesViewModel: TableViewModel, SimpleViewStateHandleable {
     // MARK: - Properties
+    weak var delegate: EpisodesViewModelDelegate?
+    
     var sectionViewModels: [TableSectionViewModel] {
-        let itemCellViewModels = episodes.compactMap { EpisodeCellViewModel($0) }
+        let itemCellViewModels = episodes.compactMap { episode in
+            let cellViewModel = EpisodeCellViewModel(episode)
+            cellViewModel.delegate = self
+            return cellViewModel
+        }
         let headerViewModel = EpisodeHeaderViewModel()
         let section = TableSectionViewModel(headerViewModel: headerViewModel)
         section.append(cellViewModels: itemCellViewModels)
@@ -50,5 +60,12 @@ class EpisodesViewModel: TableViewModel, SimpleViewStateHandleable {
                 print("Failed to get episodes with error \(error)")
             }
         }
+    }
+}
+
+// MARK: - EpisodeCellViewModelDelegate
+extension EpisodesViewModel: EpisodeCellViewModelDelegate {
+    func episodeCellViewModelDidSelect(_ viewModel: EpisodeCellViewModel, episode: EpisodeModel) {
+        delegate?.viewModelDidRequestToShowEpisodeDetail(self, episode: episode)
     }
 }

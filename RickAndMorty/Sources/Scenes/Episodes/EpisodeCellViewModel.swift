@@ -7,8 +7,14 @@
 
 import Foundation
 
+protocol EpisodeCellViewModelDelegate: AnyObject {
+    func episodeCellViewModelDidSelect(_ viewModel: EpisodeCellViewModel, episode: EpisodeModel)
+}
+
 class EpisodeCellViewModel {
     // MARK: - Properties
+    weak var delegate: EpisodeCellViewModelDelegate?
+    
     var episodeName: String {
         return episode.name
     }
@@ -26,6 +32,10 @@ class EpisodeCellViewModel {
     // MARK: - Init
     init(_ episode: EpisodeModel) {
         self.episode = episode
+    }
+    
+    func select() {
+        delegate?.episodeCellViewModelDidSelect(self, episode: episode)
     }
     
     // MARK: - Private methods

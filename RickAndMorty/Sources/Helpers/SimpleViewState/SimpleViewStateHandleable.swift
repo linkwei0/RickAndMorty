@@ -8,10 +8,15 @@
 import Foundation
 
 protocol SimpleViewStateHandleable {
+    func handleableResult<T>(_ entities: [T]) -> SimpleViewState<T>
     func handleableResult<T>(_ entities: [T], currentPage: Int, currentEntities: [T]) -> SimpleViewState<T>
 }
 
 extension SimpleViewStateHandleable {
+    func handleableResult<T>(_ entities: [T]) -> SimpleViewState<T> {
+        return .populated(entities)
+    }
+    
     func handleableResult<T>(_ entities: [T], currentPage: Int, currentEntities: [T]) -> SimpleViewState<T> {
         var allEntites = currentPage == 1 ? [] : currentEntities
         allEntites.append(contentsOf: entities)

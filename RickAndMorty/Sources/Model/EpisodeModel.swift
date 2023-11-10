@@ -12,4 +12,5 @@ struct EpisodeModel {
     let name: String
     let date: String
     let episodeSeason: String
+    let characterIDs: [Int]
 }

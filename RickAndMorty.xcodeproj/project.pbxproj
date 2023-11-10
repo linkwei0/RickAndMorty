@@ -63,6 +63,17 @@
 		AD402D602AFE280200CBAA03 /* SimpleViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D5F2AFE280200CBAA03 /* SimpleViewState.swift */; };
 		AD402D622AFE298E00CBAA03 /* SimpleViewStateHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D612AFE298E00CBAA03 /* SimpleViewStateHandleable.swift */; };
 		AD402D642AFE2E0200CBAA03 /* TableViewDataSourcePrefetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D632AFE2E0200CBAA03 /* TableViewDataSourcePrefetching.swift */; };
+		AD402D692AFE3FB800CBAA03 /* EpisodeDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D682AFE3FB800CBAA03 /* EpisodeDetailCoordinator.swift */; };
+		AD402D6B2AFE3FBF00CBAA03 /* EpisodeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D6A2AFE3FBF00CBAA03 /* EpisodeDetailViewModel.swift */; };
+		AD402D6D2AFE3FC800CBAA03 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D6C2AFE3FC800CBAA03 /* EpisodeDetailViewController.swift */; };
+		AD402D6F2AFE57DE00CBAA03 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D6E2AFE57DE00CBAA03 /* CharacterCell.swift */; };
+		AD402D712AFE5A5400CBAA03 /* CharacterCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D702AFE5A5300CBAA03 /* CharacterCellViewModel.swift */; };
+		AD402D732AFE5B1E00CBAA03 /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D722AFE5B1E00CBAA03 /* CharacterModel.swift */; };
+		AD402D752AFE5B7400CBAA03 /* CharacterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D742AFE5B7400CBAA03 /* CharacterApi.swift */; };
+		AD402D782AFE5C7A00CBAA03 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D772AFE5C7A00CBAA03 /* CharacterService.swift */; };
+		AD402D7A2AFE616F00CBAA03 /* CharacterResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D792AFE616F00CBAA03 /* CharacterResult.swift */; };
+		AD402D7C2AFE61F300CBAA03 /* CharacterEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D7B2AFE61F300CBAA03 /* CharacterEndpoint.swift */; };
+		AD402D812AFE785B00CBAA03 /* ImageDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D802AFE785B00CBAA03 /* ImageDataService.swift */; };
 		ADFECCA32AF65AAE001FF541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFECCA22AF65AAE001FF541 /* AppDelegate.swift */; };
 		ADFECCA52AF65AAE001FF541 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFECCA42AF65AAE001FF541 /* SceneDelegate.swift */; };
 		ADFECCAC2AF65AB0001FF541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADFECCAB2AF65AB0001FF541 /* Assets.xcassets */; };
@@ -134,6 +145,17 @@
 		AD402D5F2AFE280200CBAA03 /* SimpleViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewState.swift; sourceTree = "<group>"; };
 		AD402D612AFE298E00CBAA03 /* SimpleViewStateHandleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleViewStateHandleable.swift; sourceTree = "<group>"; };
 		AD402D632AFE2E0200CBAA03 /* TableViewDataSourcePrefetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSourcePrefetching.swift; sourceTree = "<group>"; };
+		AD402D682AFE3FB800CBAA03 /* EpisodeDetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailCoordinator.swift; sourceTree = "<group>"; };
+		AD402D6A2AFE3FBF00CBAA03 /* EpisodeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewModel.swift; sourceTree = "<group>"; };
+		AD402D6C2AFE3FC800CBAA03 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
+		AD402D6E2AFE57DE00CBAA03 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		AD402D702AFE5A5300CBAA03 /* CharacterCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellViewModel.swift; sourceTree = "<group>"; };
+		AD402D722AFE5B1E00CBAA03 /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		AD402D742AFE5B7400CBAA03 /* CharacterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterApi.swift; sourceTree = "<group>"; };
+		AD402D772AFE5C7A00CBAA03 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
+		AD402D792AFE616F00CBAA03 /* CharacterResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterResult.swift; sourceTree = "<group>"; };
+		AD402D7B2AFE61F300CBAA03 /* CharacterEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEndpoint.swift; sourceTree = "<group>"; };
+		AD402D802AFE785B00CBAA03 /* ImageDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataService.swift; sourceTree = "<group>"; };
 		ADFECC9F2AF65AAE001FF541 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFECCA22AF65AAE001FF541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADFECCA42AF65AAE001FF541 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -295,6 +317,7 @@
 		AD402CF12AF8F4C400CBAA03 /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
+				AD402D672AFE3F4B00CBAA03 /* EpisodeDetail */,
 				AD402CF22AF8F4D300CBAA03 /* EpisodesCoordinator.swift */,
 				AD402CF42AF8F4EF00CBAA03 /* EpisodesViewModel.swift */,
 				AD402CF62AF8F4F600CBAA03 /* EpisodesViewController.swift */,
@@ -358,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				AD402D382AFCC93F00CBAA03 /* EpisodeModel.swift */,
+				AD402D722AFE5B1E00CBAA03 /* CharacterModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -369,7 +393,9 @@
 				AD402D0D2AF9012100CBAA03 /* NetworkConfiguration.swift */,
 				AD402D3B2AFCC9BA00CBAA03 /* HTTPStatusCode.swift */,
 				AD402D3D2AFCC9C400CBAA03 /* APIError.swift */,
+				AD402D762AFE5C6800CBAA03 /* NetworkService+Character */,
 				AD402D4A2AFCCB3B00CBAA03 /* NetworkService+Episode */,
+				AD402D802AFE785B00CBAA03 /* ImageDataService.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -379,6 +405,7 @@
 			children = (
 				AD402D412AFCCA5000CBAA03 /* EpisodeApi.swift */,
 				AD402D432AFCCA7100CBAA03 /* InfoApi.swift */,
+				AD402D742AFE5B7400CBAA03 /* CharacterApi.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -387,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				AD402D452AFCCA7E00CBAA03 /* EpisodeResult.swift */,
+				AD402D792AFE616F00CBAA03 /* CharacterResult.swift */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -445,6 +473,27 @@
 				AD402D632AFE2E0200CBAA03 /* TableViewDataSourcePrefetching.swift */,
 			);
 			path = DataSourcePrefetching;
+			sourceTree = "<group>";
+		};
+		AD402D672AFE3F4B00CBAA03 /* EpisodeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				AD402D682AFE3FB800CBAA03 /* EpisodeDetailCoordinator.swift */,
+				AD402D6C2AFE3FC800CBAA03 /* EpisodeDetailViewController.swift */,
+				AD402D6A2AFE3FBF00CBAA03 /* EpisodeDetailViewModel.swift */,
+				AD402D6E2AFE57DE00CBAA03 /* CharacterCell.swift */,
+				AD402D702AFE5A5300CBAA03 /* CharacterCellViewModel.swift */,
+			);
+			path = EpisodeDetail;
+			sourceTree = "<group>";
+		};
+		AD402D762AFE5C6800CBAA03 /* NetworkService+Character */ = {
+			isa = PBXGroup;
+			children = (
+				AD402D772AFE5C7A00CBAA03 /* CharacterService.swift */,
+				AD402D7B2AFE61F300CBAA03 /* CharacterEndpoint.swift */,
+			);
+			path = "NetworkService+Character";
 			sourceTree = "<group>";
 		};
 		ADFECC962AF65AAE001FF541 = {
@@ -714,6 +763,9 @@
 				AD402CE42AF8D8C100CBAA03 /* MenuCell.swift in Sources */,
 				AD402CBF2AF7A20900CBAA03 /* TextStyle.swift in Sources */,
 				AD402CD52AF8D08800CBAA03 /* DIContainer.swift in Sources */,
+				AD402D6D2AFE3FC800CBAA03 /* EpisodeDetailViewController.swift in Sources */,
+				AD402D782AFE5C7A00CBAA03 /* CharacterService.swift in Sources */,
+				AD402D812AFE785B00CBAA03 /* ImageDataService.swift in Sources */,
 				ADFECCBD2AF66032001FF541 /* Coordinator.swift in Sources */,
 				AD402CDB2AF8D51900CBAA03 /* WelcomeAssembly.swift in Sources */,
 				AD175B5B2AF79E35008684F5 /* WelcomeViewModel.swift in Sources */,
@@ -731,25 +783,31 @@
 				AD402D4E2AFCCE0D00CBAA03 /* EpisodeCell.swift in Sources */,
 				AD402CCD2AF7AD2D00CBAA03 /* GradientButton.swift in Sources */,
 				AD402D392AFCC93F00CBAA03 /* EpisodeModel.swift in Sources */,
+				AD402D732AFE5B1E00CBAA03 /* CharacterModel.swift in Sources */,
 				AD402D3C2AFCC9BA00CBAA03 /* HTTPStatusCode.swift in Sources */,
 				AD402D5A2AFCD5A900CBAA03 /* Bindable.swift in Sources */,
+				AD402D6F2AFE57DE00CBAA03 /* CharacterCell.swift in Sources */,
 				AD402D622AFE298E00CBAA03 /* SimpleViewStateHandleable.swift in Sources */,
 				AD402CCA2AF7AC1E00CBAA03 /* UIView+Gradient.swift in Sources */,
 				AD402CC82AF7A4C000CBAA03 /* WelcomeCoordinator.swift in Sources */,
 				AD175B532AF79A7B008684F5 /* MenuViewModel.swift in Sources */,
 				ADFECCA32AF65AAE001FF541 /* AppDelegate.swift in Sources */,
+				AD402D752AFE5B7400CBAA03 /* CharacterApi.swift in Sources */,
 				AD402D582AFCD3EF00CBAA03 /* EpisodeCellViewModel.swift in Sources */,
 				AD175B5D2AF79E3C008684F5 /* WelcomeViewController.swift in Sources */,
 				AD402CC42AF7A3F300CBAA03 /* R.generated.swift in Sources */,
+				AD402D7C2AFE61F300CBAA03 /* CharacterEndpoint.swift in Sources */,
 				AD175B512AF79A5D008684F5 /* MenuViewController.swift in Sources */,
 				ADFECCC52AF66169001FF541 /* BaseViewController.swift in Sources */,
 				AD402CEA2AF8ECD900CBAA03 /* MenuCellViewModel.swift in Sources */,
 				AD402D562AFCD22200CBAA03 /* TableSectionViewModel.swift in Sources */,
 				AD175B552AF79A87008684F5 /* MenuCoordinator.swift in Sources */,
 				AD402CC12AF7A22C00CBAA03 /* UIFont+AppFonts.swift in Sources */,
+				AD402D712AFE5A5400CBAA03 /* CharacterCellViewModel.swift in Sources */,
 				ADFECCC32AF6613F001FF541 /* NavigationPopObserver.swift in Sources */,
 				ADFECCC82AF66378001FF541 /* AppCoordinator.swift in Sources */,
 				AD402CFA2AF8F56800CBAA03 /* EpisodesAssembly.swift in Sources */,
+				AD402D692AFE3FB800CBAA03 /* EpisodeDetailCoordinator.swift in Sources */,
 				AD402D002AF8F8FA00CBAA03 /* HasEpisodesService.swift in Sources */,
 				AD402D602AFE280200CBAA03 /* SimpleViewState.swift in Sources */,
 				AD402CD12AF8CEC200CBAA03 /* DataStoreProtocol.swift in Sources */,
@@ -758,6 +816,7 @@
 				AD402D102AF9018F00CBAA03 /* EpisodeService.swift in Sources */,
 				AD402CD32AF8CF1E00CBAA03 /* DataStoreService.swift in Sources */,
 				AD402CF52AF8F4EF00CBAA03 /* EpisodesViewModel.swift in Sources */,
+				AD402D7A2AFE616F00CBAA03 /* CharacterResult.swift in Sources */,
 				AD402D642AFE2E0200CBAA03 /* TableViewDataSourcePrefetching.swift in Sources */,
 				AD402CBD2AF7A1F400CBAA03 /* Label.swift in Sources */,
 				AD402CF72AF8F4F600CBAA03 /* EpisodesViewController.swift in Sources */,
@@ -767,6 +826,7 @@
 				AD402D542AFCD1B400CBAA03 /* TableViewDataSourceProtocols.swift in Sources */,
 				AD402D462AFCCA7E00CBAA03 /* EpisodeResult.swift in Sources */,
 				AD402CD72AF8D0FD00CBAA03 /* DataSourceAssembly.swift in Sources */,
+				AD402D6B2AFE3FBF00CBAA03 /* EpisodeDetailViewModel.swift in Sources */,
 				AD402CE62AF8DBC400CBAA03 /* MenuListCollectionLayout.swift in Sources */,
 				AD402D122AF901DD00CBAA03 /* EpisodeEndpoint.swift in Sources */,
 				ADFECCA52AF65AAE001FF541 /* SceneDelegate.swift in Sources */,
