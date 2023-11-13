@@ -9,19 +9,21 @@ import UIKit
 
 class CharacterCellViewModel {
     // MARK: - Properties
-    var image: UIImage? {
-        return characterImage
-    }
-    
     var name: String {
         return character.name
     }
     
     var status: String {
-        return character.status
+        return character.status.rawValue
     }
     
-    private var characterImage: UIImage?
+    var statusColor: UIColor {
+        return character.status.isAlive ? .accentGreen : .accentRed
+    }
+    
+    var imageData: Data? {
+        return imageService.getImageDataFromCache(with: character.image)
+    }
     
     private let character: CharacterModel
     private let imageService: ImageDataServiceProtocol
@@ -30,16 +32,16 @@ class CharacterCellViewModel {
     init(_ character: CharacterModel, imageService: ImageDataServiceProtocol) {
         self.character = character
         self.imageService = imageService
-        getAndConvertImage()
     }
     
-    private func getAndConvertImage() {
+    func getImage(completion: @escaping(Data) -> Void) {
         imageService.request(urlString: character.image) { result in
             switch result {
             case .success(let imageData):
-                self.characterImage = UIImage(data: imageData)
-            case .failure:
-                self.characterImage = R.image.defaultIconImage()
+                self.imageService.saveImageDataInCache(with: self.character.image, data: imageData)
+                completion(imageData)
+            case .failure(let error):
+                print("Failed to get image with \(error)")
             }
         }
     }

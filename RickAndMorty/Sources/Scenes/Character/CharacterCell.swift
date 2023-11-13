@@ -14,6 +14,8 @@ class CharacterCell: UITableViewCell, TableCell {
     private let nameLabel = Label(textStyle: .bodyBold)
     private let statusLabel = Label(textStyle: .footnoteBold)
     
+    private var viewModel: CharacterCellViewModel?
+    
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -28,9 +30,12 @@ class CharacterCell: UITableViewCell, TableCell {
     // MARK: - Configure
     func configure(with viewModel: TableCellViewModel) {
         guard let viewModel = viewModel as? CharacterCellViewModel else { return }
-        mainImageView.image = viewModel.image
+        self.viewModel = viewModel
+        
         nameLabel.text = viewModel.name
         statusLabel.text = viewModel.status
+        statusLabel.textColor = viewModel.statusColor
+        configureImage()
     }
     
     // MARK: - Setup
@@ -60,13 +65,15 @@ class CharacterCell: UITableViewCell, TableCell {
     private func setupMainImageView() {
         stackView.addArrangedSubview(mainImageView)
         mainImageView.clipsToBounds = true
-        mainImageView.contentMode = .scaleAspectFit
-        mainImageView.image = UIImage(systemName: "person")
+        mainImageView.contentMode = .scaleAspectFill
+        mainImageView.image?.withTintColor(.green, renderingMode: .alwaysTemplate)
+        mainImageView.layer.borderColor = UIColor.baseBlack.cgColor
+        mainImageView.layer.borderWidth = 1.0
+        mainImageView.layer.cornerRadius = 24
     }
     
     private func setupNameLabel() {
         stackView.addArrangedSubview(nameLabel)
-        nameLabel.text = "Rick Sanches"
         nameLabel.textAlignment = .center
         nameLabel.numberOfLines = 0
         nameLabel.textColor = .baseBlack
@@ -74,9 +81,21 @@ class CharacterCell: UITableViewCell, TableCell {
     
     private func setupStatusLabel() {
         stackView.addArrangedSubview(statusLabel)
-        statusLabel.text = "Жив"
         statusLabel.textAlignment = .center
         statusLabel.numberOfLines = 0
         statusLabel.textColor = .baseBlack
+    }
+    
+    // MARK: - Private methods
+    private func configureImage() {
+        if let imageData = viewModel?.imageData {
+            self.mainImageView.image = UIImage(data: imageData)
+        } else {
+            viewModel?.getImage() { imageData in
+                DispatchQueue.main.async {
+                    self.mainImageView.image = UIImage(data: imageData)
+                }
+            }
+        }
     }
 }
