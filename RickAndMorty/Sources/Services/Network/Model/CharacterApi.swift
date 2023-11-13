@@ -22,31 +22,11 @@ struct CharacterApi: Decodable {
 
 extension CharacterApi: DomainConvertible {
     func asDomain() -> CharacterModel {
+        guard let status = Status(rawValue: status),
+              let species = Species(rawValue: species),
+              let gender = Gender(rawValue: gender) else { return CharacterModel.makeCleanModel() }
         return CharacterModel(id: id, name: name, status: status, species: species,
                               type: type, gender: gender, image: image,
                               episode: episode, url: url, created: created)
     }
-}
-
-enum Gender: String, Codable {
-    case female = "Женщина"
-    case male = "Мужчина"
-    case unknown = "Что это?"
-}
-
-struct Location: Codable {
-    let name: String
-    let url: String
-}
-
-enum Species: String, Codable {
-    case alien = "Пришелец"
-    case cronenberg = "Кроненберг"
-    case human = "Человек"
-}
-
-enum Status: String, Codable {
-    case alive = "Жив"
-    case dead = "Мертв"
-    case unknown = "Неизвестно"
 }

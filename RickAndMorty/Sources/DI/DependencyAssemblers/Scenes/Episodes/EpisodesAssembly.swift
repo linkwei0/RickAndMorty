@@ -17,6 +17,6 @@ final class EpisodesAssembly: Assembly {
         container.register(EpisodesViewModel.self) { resolver in
             guard let episodeService = resolver.resolve(EpisodeServiceProtocol.self) else { fatalError() }
             return EpisodesViewModel(episodeService: episodeService)
-        }
+        }        
     }
 }

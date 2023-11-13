@@ -47,15 +47,23 @@ struct _R {
     let developmentRegion = "en"
   }
 
-  /// This `_R.string` struct is generated, and contains static references to 3 localization tables.
+  /// This `_R.string` struct is generated, and contains static references to 5 localization tables.
   struct string {
     let bundle: Foundation.Bundle
     let preferredLanguages: [String]?
     let locale: Locale?
+    var character: character { .init(source: .init(bundle: bundle, tableName: "Character", preferredLanguages: preferredLanguages, locale: locale)) }
+    var characterPage: characterPage { .init(source: .init(bundle: bundle, tableName: "CharacterPage", preferredLanguages: preferredLanguages, locale: locale)) }
     var episodes: episodes { .init(source: .init(bundle: bundle, tableName: "Episodes", preferredLanguages: preferredLanguages, locale: locale)) }
     var menu: menu { .init(source: .init(bundle: bundle, tableName: "Menu", preferredLanguages: preferredLanguages, locale: locale)) }
     var welcome: welcome { .init(source: .init(bundle: bundle, tableName: "Welcome", preferredLanguages: preferredLanguages, locale: locale)) }
 
+    func character(preferredLanguages: [String]) -> character {
+      .init(source: .init(bundle: bundle, tableName: "Character", preferredLanguages: preferredLanguages, locale: locale))
+    }
+    func characterPage(preferredLanguages: [String]) -> characterPage {
+      .init(source: .init(bundle: bundle, tableName: "CharacterPage", preferredLanguages: preferredLanguages, locale: locale))
+    }
     func episodes(preferredLanguages: [String]) -> episodes {
       .init(source: .init(bundle: bundle, tableName: "Episodes", preferredLanguages: preferredLanguages, locale: locale))
     }
@@ -67,9 +75,114 @@ struct _R {
     }
 
 
-    /// This `_R.string.episodes` struct is generated, and contains static references to 1 localization keys.
+    /// This `_R.string.character` struct is generated, and contains static references to 9 localization keys.
+    struct character {
+      let source: RswiftResources.StringResource.Source
+
+      /// Value: Женщина
+      ///
+      /// Key: character.gender.female
+      var characterGenderFemale: RswiftResources.StringResource { .init(key: "character.gender.female", tableName: "Character", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Мужчина
+      ///
+      /// Key: character.gender.male
+      var characterGenderMale: RswiftResources.StringResource { .init(key: "character.gender.male", tableName: "Character", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Что это?
+      ///
+      /// Key: character.gender.unknown
+      var characterGenderUnknown: RswiftResources.StringResource { .init(key: "character.gender.unknown", tableName: "Character", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Пришелец
+      ///
+      /// Key: character.specie.alien
+      var characterSpecieAlien: RswiftResources.StringResource { .init(key: "character.specie.alien", tableName: "Character", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Кроненберг
+      ///
+      /// Key: character.specie.cronenberg
+      var characterSpecieCronenberg: RswiftResources.StringResource { .init(key: "character.specie.cronenberg", tableName: "Character", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Человек
+      ///
+      /// Key: character.specie.human
+      var characterSpecieHuman: RswiftResources.StringResource { .init(key: "character.specie.human", tableName: "Character", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Жив
+      ///
+      /// Key: character.status.alive
+      var characterStatusAlive: RswiftResources.StringResource { .init(key: "character.status.alive", tableName: "Character", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Мертв
+      ///
+      /// Key: character.status.dead
+      var characterStatusDead: RswiftResources.StringResource { .init(key: "character.status.dead", tableName: "Character", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Неизвестно
+      ///
+      /// Key: character.status.unknown
+      var characterStatusUnknown: RswiftResources.StringResource { .init(key: "character.status.unknown", tableName: "Character", source: source, developmentValue: nil, comment: nil) }
+    }
+
+    /// This `_R.string.characterPage` struct is generated, and contains static references to 7 localization keys.
+    struct characterPage {
+      let source: RswiftResources.StringResource.Source
+
+      /// Value: Количество эпизодов:
+      ///
+      /// Key: character.page.type.episodesCount
+      var characterPageTypeEpisodesCount: RswiftResources.StringResource { .init(key: "character.page.type.episodesCount", tableName: "CharacterPage", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Пол:
+      ///
+      /// Key: character.page.type.gender
+      var characterPageTypeGender: RswiftResources.StringResource { .init(key: "character.page.type.gender", tableName: "CharacterPage", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Имя:
+      ///
+      /// Key: character.page.type.name
+      var characterPageTypeName: RswiftResources.StringResource { .init(key: "character.page.type.name", tableName: "CharacterPage", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Вид:
+      ///
+      /// Key: character.page.type.specie
+      var characterPageTypeSpecie: RswiftResources.StringResource { .init(key: "character.page.type.specie", tableName: "CharacterPage", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Статус:
+      ///
+      /// Key: character.page.type.status
+      var characterPageTypeStatus: RswiftResources.StringResource { .init(key: "character.page.type.status", tableName: "CharacterPage", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Местоположение
+      ///
+      /// Key: character.page.view.button.loction
+      var characterPageViewButtonLoction: RswiftResources.StringResource { .init(key: "character.page.view.button.loction", tableName: "CharacterPage", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Родина
+      ///
+      /// Key: character.page.view.button.origin
+      var characterPageViewButtonOrigin: RswiftResources.StringResource { .init(key: "character.page.view.button.origin", tableName: "CharacterPage", source: source, developmentValue: nil, comment: nil) }
+    }
+
+    /// This `_R.string.episodes` struct is generated, and contains static references to 4 localization keys.
     struct episodes {
       let source: RswiftResources.StringResource.Source
+
+      /// Value: Дата
+      ///
+      /// Key: episodes.header.view.date
+      var episodesHeaderViewDate: RswiftResources.StringResource { .init(key: "episodes.header.view.date", tableName: "Episodes", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Номер
+      ///
+      /// Key: episodes.header.view.number
+      var episodesHeaderViewNumber: RswiftResources.StringResource { .init(key: "episodes.header.view.number", tableName: "Episodes", source: source, developmentValue: nil, comment: nil) }
+
+      /// Value: Название
+      ///
+      /// Key: episodes.header.view.title
+      var episodesHeaderViewTitle: RswiftResources.StringResource { .init(key: "episodes.header.view.title", tableName: "Episodes", source: source, developmentValue: nil, comment: nil) }
 
       /// Value: Эпизоды
       ///
@@ -128,7 +241,7 @@ struct _R {
     }
   }
 
-  /// This `_R.color` struct is generated, and contains static references to 7 colors.
+  /// This `_R.color` struct is generated, and contains static references to 9 colors.
   struct color {
     let bundle: Foundation.Bundle
 
@@ -137,6 +250,12 @@ struct _R {
 
     /// Color `accent`.
     var accent: RswiftResources.ColorResource { .init(name: "accent", path: [], bundle: bundle) }
+
+    /// Color `accentGreen`.
+    var accentGreen: RswiftResources.ColorResource { .init(name: "accentGreen", path: [], bundle: bundle) }
+
+    /// Color `accentRed`.
+    var accentRed: RswiftResources.ColorResource { .init(name: "accentRed", path: [], bundle: bundle) }
 
     /// Color `accentYellow`.
     var accentYellow: RswiftResources.ColorResource { .init(name: "accentYellow", path: [], bundle: bundle) }

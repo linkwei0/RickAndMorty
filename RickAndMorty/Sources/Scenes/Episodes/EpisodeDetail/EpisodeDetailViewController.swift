@@ -44,7 +44,7 @@ class EpisodeDetailViewController: BaseViewController {
         tableView.rowHeight = 120
         tableView.estimatedRowHeight = 120
         tableView.showsVerticalScrollIndicator = false
-        tableView.separatorColor = .accentYellow
+        tableView.separatorColor = .baseBlack
         tableView.register(CharacterCell.self, forCellReuseIdentifier: CharacterCell.reuseIdentifier)
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

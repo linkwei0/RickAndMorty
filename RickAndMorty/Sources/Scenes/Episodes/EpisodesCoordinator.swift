@@ -34,6 +34,6 @@ class EpisodesCoordinator: Coordinator {
 extension EpisodesCoordinator: EpisodesViewModelDelegate {
     func viewModelDidRequestToShowEpisodeDetail(_ viewModel: EpisodesViewModel, episode: EpisodeModel) {
         let configuration = EpisodeDetailCoordinatorConfiguration(episode: episode)
-        let coordinator = show(EpisodeDetailCoordinator.self, configuration: configuration, animated: true)
+        show(EpisodeDetailCoordinator.self, configuration: configuration, animated: true)
     }
 }

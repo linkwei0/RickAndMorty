@@ -10,6 +10,7 @@ import Foundation
 protocol NetworkService {
     var session: URLSession { get }
     func fetch<T: Decodable>(with request: URLRequest, completion: @escaping (Result<T, NetworkError>) -> Void)
+    func fetch(with request: URLRequest, completion: @escaping (Result<Data, NetworkError>) -> Void)
 }
 
 extension NetworkService {
@@ -17,6 +18,15 @@ extension NetworkService {
         startRequest(request: request, completion: completion)
     }
     
+    func fetch(with request: URLRequest, completion: @escaping (Result<Data, NetworkError>) -> Void) {
+        let task = session.dataTask(with: request) { data, _, _ in
+            guard let data = data else { return }
+            completion(.success(data))
+        }
+        task.resume()
+    }
+    
+    // MARK: - Private methods
     private func startRequest<T: Decodable>(request: URLRequest, completion: @escaping (Result<T, NetworkError>) -> Void) {
         let task = session.dataTask(with: request) { data, response, _ in
             guard let response = response, let data = data else { completion(.failure(.serverError)); return }

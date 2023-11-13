@@ -1,7 +1,16 @@
 /* 
   Character.strings
   RickAndMorty
-
-  Created by Артём Бацанов on 12.11.2023.
-  
 */
+
+"character.gender.female" = "Женщина";
+"character.gender.male" = "Мужчина";
+"character.gender.unknown" = "Что это?";
+
+"character.specie.alien" = "Пришелец";
+"character.specie.cronenberg" = "Кроненберг";
+"character.specie.human" = "Человек";
+
+"character.status.alive" = "Жив";
+"character.status.dead" = "Мертв";
+"character.status.unknown" = "Неизвестно";

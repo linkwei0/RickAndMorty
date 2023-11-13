@@ -4,3 +4,7 @@
 */
 
 "episodes.title" = "Эпизоды";
+
+"episodes.header.view.title" = "Название";
+"episodes.header.view.number" = "Номер";
+"episodes.header.view.date" = "Дата";

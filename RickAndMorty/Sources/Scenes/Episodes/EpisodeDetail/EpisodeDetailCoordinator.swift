@@ -31,9 +31,19 @@ class EpisodeDetailCoordinator: ConfigurableCoordinator {
     }
     
     private func showEpisodeDetailScreen(animated: Bool) {
-        let viewModel = EpisodeDetailViewModel(characterService: CharacterService(), episode: configuration.episode)
+        let viewModel: EpisodeDetailViewModel = DIContainer.shared.resolve(argument: configuration.episode)
+        viewModel.delegate = self
         let viewController = EpisodeDetailViewController(viewModel: viewModel)
         viewController.navigationItem.title = configuration.episode.name
         navigationController.pushViewController(viewController, animated: animated)
+    }
+}
+
+// MARK: - EpisodeDetailViewModelDelegate
+extension EpisodeDetailCoordinator: EpisodeDetailViewModelDelegate {
+    func viewModelDidRequestToShowCharacterDetail(_ viewModel: EpisodeDetailViewModel,
+                                                  character: CharacterModel, imageData: Data) {
+        let configuration = CharacterDetailCoordinatorConfiguration(character: character, imageData: imageData)
+        show(CharacterDetailCoordinator.self, configuration: configuration, animated: true)
     }
 }

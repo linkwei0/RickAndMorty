@@ -1,7 +1,13 @@
 /* 
   CharacterPage.strings
   RickAndMorty
-
-  Created by Артём Бацанов on 12.11.2023.
-  
 */
+
+"character.page.view.button.origin" = "Родина";
+"character.page.view.button.loction" = "Местоположение";
+
+"character.page.type.name" = "Имя:";
+"character.page.type.status" = "Статус:";
+"character.page.type.specie" = "Вид:";
+"character.page.type.gender" = "Пол:";
+"character.page.type.episodesCount" = "Количество эпизодов:";

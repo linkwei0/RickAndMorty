@@ -18,15 +18,15 @@ final class ImageService: NetworkService, ImageServiceProtocol {
     private let cacheService: CacheServiceProtocol
     
     // MARK: - Init
-    init(configuration: URLSessionConfiguration, cacheService: CacheServiceProtocol = CacheService()) {
+    init(configuration: URLSessionConfiguration, cacheService: CacheServiceProtocol) {
         session = URLSession(configuration: configuration)
         self.cacheService = cacheService
     }
     
-    convenience init() {
+    convenience init(cacheService: CacheServiceProtocol) {
         let configuration = URLSessionConfiguration.default
         configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
-        self.init(configuration: configuration)
+        self.init(configuration: configuration, cacheService: cacheService)
     }
     
     func request(urlString: String, completion: @escaping (Result<Data, NetworkError>) -> Void) {

@@ -13,7 +13,9 @@ final class SceneAssembly: Assembly {
         let assemblies: [Assembly] = [
             WelcomeAssembly(),
             MenuAssembly(),
-            EpisodesAssembly()
+            EpisodesAssembly(),
+            EpisodeDetailAssembly(),
+            CharacterDetailAssembly()
         ]
         assemblies.forEach { $0.assemble(container: container) }
     }

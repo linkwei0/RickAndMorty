@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol ImageDataServiceCachingProtocol {
+    func getImageDataFromCache(with key: String) -> Data?
+    func saveImageDataInCache(with key: String, data: Data?)
+}

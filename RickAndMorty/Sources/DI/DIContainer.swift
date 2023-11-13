@@ -25,4 +25,14 @@ final class DIContainer {
         guard let resolvedType = container.resolve(T.self) else { fatalError() }
         return resolvedType
     }
+    
+    func resolve<T, Arg>(argument: Arg) -> T {
+        guard let resolvedType = container.resolve(T.self, argument: argument) else { fatalError() }
+        return resolvedType
+    }
+    
+    func resolve<T, Arg1, Arg2>(argument1: Arg1, argument2: Arg2) -> T {
+        guard let resolvedType = container.resolve(T.self, arguments: argument1, argument2) else { fatalError() }
+        return resolvedType
+    }
 }

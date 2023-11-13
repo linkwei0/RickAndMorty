@@ -7,8 +7,14 @@
 
 import UIKit
 
+protocol CharacterCellViewModelDelegate: AnyObject {
+    func characterCellViewModelDidTap(_ viewModel: CharacterCellViewModel, character: CharacterModel, imageData: Data)
+}
+
 class CharacterCellViewModel {
     // MARK: - Properties
+    weak var delegate: CharacterCellViewModelDelegate?
+    
     var name: String {
         return character.name
     }
@@ -26,14 +32,15 @@ class CharacterCellViewModel {
     }
     
     private let character: CharacterModel
-    private let imageService: ImageDataServiceProtocol
+    private let imageService: ImageServiceProtocol & ImageDataServiceCachingProtocol
         
     // MARK: - Init
-    init(_ character: CharacterModel, imageService: ImageDataServiceProtocol) {
+    init(_ character: CharacterModel, imageService: ImageServiceProtocol & ImageDataServiceCachingProtocol) {
         self.character = character
         self.imageService = imageService
     }
     
+    // MARK: - Public methods
     func getImage(completion: @escaping(Data) -> Void) {
         imageService.request(urlString: character.image) { result in
             switch result {
@@ -45,8 +52,13 @@ class CharacterCellViewModel {
             }
         }
     }
+    
+    func select() {
+        delegate?.characterCellViewModelDidTap(self, character: character, imageData: imageData ?? Data())
+    }
 }
 
+// MARK: - TableCellViewModel
 extension CharacterCellViewModel: TableCellViewModel {
     var tableReuseIdentifier: String {
         return CharacterCell.reuseIdentifier

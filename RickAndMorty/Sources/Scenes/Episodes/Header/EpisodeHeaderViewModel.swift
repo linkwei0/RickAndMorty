@@ -13,11 +13,11 @@ enum EpisodeHeaderConfiguration {
     var text: String {
         switch self {
         case .title:
-            return "Название"
+            return R.string.episodes.episodesHeaderViewTitle()
         case .number:
-            return "Номер"
+            return R.string.episodes.episodesHeaderViewNumber()
         case .date:
-            return "Дата"
+            return R.string.episodes.episodesHeaderViewDate()
         }
     }
 }
