@@ -10,6 +10,8 @@ import UIKit
 class EpisodeDetailViewController: BaseViewController {
     // MARK: - Properties
     private var dataSoure = TableViewDataSource()
+    
+    private var prefetchDataSource: TableViewDataSourcePrefetching?
 
     private let tableView = UITableView()
     
@@ -54,7 +56,12 @@ class EpisodeDetailViewController: BaseViewController {
     
     // MARK: - Private methods
     private func reloadTableView() {
-        dataSoure.update(with: viewModel)
+        prefetchDataSource = TableViewDataSourcePrefetching(cellCount: viewModel.characters.count,
+                                                            needsPrefetch: viewModel.needsPrefetch) { [weak self] in
+            self?.viewModel.viewIsReady()
+        }
+        tableView.prefetchDataSource = prefetchDataSource
+        tableView.reloadData()
     }
     
     // MARK: - Bindables

@@ -37,7 +37,9 @@ extension MenuCoordinator: MenuViewModelDelegate {
         case .episodes:
             show(EpisodesCoordinator.self, animated: true)
         case .characters:
-            break
+            let configuration = EpisodeDetailCoordinatorConfiguration(episode: nil)
+            show(EpisodeDetailCoordinator.self, configuration: configuration, animated: true)
+//            show(EpisodeDetailCoordinator.self, animated: true)
         case .locations:
             break
         }

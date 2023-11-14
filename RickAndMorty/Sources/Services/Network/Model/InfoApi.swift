@@ -9,4 +9,5 @@ import Foundation
 
 struct InfoApi: Decodable {
     let next: String?
+    let prev: String?
 }

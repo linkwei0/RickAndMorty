@@ -27,8 +27,16 @@ final class EpisodeDetailAssembly: Assembly {
             guard let characterService = resolver.resolve(CharacterServiceProtocol.self) else { fatalError() }
             guard let imageService = resolver
                 .resolve((ImageServiceProtocol & ImageDataServiceCachingProtocol).self) else { fatalError() }
-            
+
             return EpisodeDetailViewModel(characterService: characterService, imageService: imageService, episode: episode)
+        }
+        
+        container.register(EpisodeDetailViewModel.self) { resolver in
+            guard let characterService = resolver.resolve(CharacterServiceProtocol.self) else { fatalError() }
+            guard let imageService = resolver
+                .resolve((ImageServiceProtocol & ImageDataServiceCachingProtocol).self) else { fatalError() }
+            
+            return EpisodeDetailViewModel(characterService: characterService, imageService: imageService)
         }
     }
 }

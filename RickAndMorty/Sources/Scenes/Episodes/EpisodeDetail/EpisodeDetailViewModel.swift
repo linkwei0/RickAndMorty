@@ -30,16 +30,20 @@ class EpisodeDetailViewModel: TableViewModel, SimpleViewStateHandleable {
         return viewState.value.currentEntities
     }
     
+    var needsPrefetch: Bool {
+        return viewState.value.needsPrefetch
+    }
+    
     private(set) var viewState: Bindable<SimpleViewState<CharacterModel>> = Bindable(.initial)
     
     private let characterService: CharacterServiceProtocol
     private let imageService: ImageServiceProtocol & ImageDataServiceCachingProtocol
-    private let episode: EpisodeModel
+    private var episode: EpisodeModel?
     
     // MARK: - Init
     init(characterService: CharacterServiceProtocol,
          imageService: (ImageServiceProtocol & ImageDataServiceCachingProtocol),
-         episode: EpisodeModel) {
+         episode: EpisodeModel? = nil) {
         self.characterService = characterService
         self.imageService = imageService
         self.episode = episode
@@ -47,19 +51,36 @@ class EpisodeDetailViewModel: TableViewModel, SimpleViewStateHandleable {
         
     // MARK: - Public methods
     func viewIsReady() {
-        fetchCharacters()
+        if let episode = episode {
+            fetchCharacters(by: episode)
+        } else {
+            fetchAllCharacters(page: viewState.value.currentPage)
+        }
     }
     
     // MARK: - Private methods
-    private func fetchCharacters() {
+    private func fetchCharacters(by episode: EpisodeModel) {
         let characterIDs = episode.characterIDs.map { String($0) }.joined(separator: ",")
-        characterService.getCharacters(with: characterIDs) { result in
+        characterService.getCharactersByEpisode(with: characterIDs) { result in
             switch result {
             case .success(let characterResult):
                 let domainModels = characterResult.results.map { $0.asDomain() }
                 self.viewState.value = self.handleableResult(domainModels)
             case .failure(let error):
-                print("Failed to get characters with \(error)")
+                print("Failed to get characters by episode with \(error)")
+            }
+        }
+    }
+    
+    private func fetchAllCharacters(page: Int) {
+        characterService.getCharacters(page: page) { result in
+            switch result {
+            case .success(let characterResult):
+                let domainModels = characterResult.results.map { $0.asDomain() }
+                self.viewState.value = self.handleableResult(domainModels, currentPage: page,
+                                                             currentEntities: self.characters)
+            case .failure(let error):
+                print("Failed to get all characters with \(error)")
             }
         }
     }

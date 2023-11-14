@@ -8,7 +8,8 @@
 import Foundation
 
 enum CharacterEndpoint {
-    case getCharacters(charactersIDs: String)
+    case getCharacters(page: Int)
+    case getCharactersByEpisode(charactersIDs: String)
 }
 
 extension CharacterEndpoint: Endpoint {
@@ -18,7 +19,9 @@ extension CharacterEndpoint: Endpoint {
     
     var path: String {
         switch self {
-        case .getCharacters((let charactersIDs)):
+        case .getCharacters:
+            return "/api/character"
+        case .getCharactersByEpisode((let charactersIDs)):
             return "/api/character/\(charactersIDs)"
         }
     }
@@ -28,12 +31,17 @@ extension CharacterEndpoint: Endpoint {
     }
     
     var params: [String: Any]? {
-        return nil
+        switch self {
+        case .getCharacters(let page):
+            return ["page": page]
+        default:
+            return nil
+        }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .getCharacters:
+        case .getCharacters, .getCharactersByEpisode:
             return .get
         }
     }

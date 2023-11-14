@@ -8,7 +8,7 @@
 import Foundation
 
 struct EpisodeDetailCoordinatorConfiguration {
-    let episode: EpisodeModel
+    let episode: EpisodeModel?
 }
 
 class EpisodeDetailCoordinator: ConfigurableCoordinator {
@@ -31,11 +31,19 @@ class EpisodeDetailCoordinator: ConfigurableCoordinator {
     }
     
     private func showEpisodeDetailScreen(animated: Bool) {
-        let viewModel: EpisodeDetailViewModel = DIContainer.shared.resolve(argument: configuration.episode)
+        let viewModel = configureDetailViewModel()
         viewModel.delegate = self
         let viewController = EpisodeDetailViewController(viewModel: viewModel)
-        viewController.navigationItem.title = configuration.episode.name
+        viewController.navigationItem.title = configuration.episode != nil ? configuration.episode?.name : "Персонажи"
         navigationController.pushViewController(viewController, animated: animated)
+    }
+    
+    private func configureDetailViewModel() -> EpisodeDetailViewModel {
+        if let episode = configuration.episode {
+            return DIContainer.shared.resolve(argument: episode)
+        } else {
+            return DIContainer.shared.resolve()
+        }
     }
 }
 

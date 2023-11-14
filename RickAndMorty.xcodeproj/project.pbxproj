@@ -85,6 +85,8 @@
 		AD402D992B01565B00CBAA03 /* Character.strings in Resources */ = {isa = PBXBuildFile; fileRef = AD402D982B01565B00CBAA03 /* Character.strings */; };
 		AD402D9B2B027C8C00CBAA03 /* EpisodeDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D9A2B027C8C00CBAA03 /* EpisodeDetailAssembly.swift */; };
 		AD402D9E2B02825200CBAA03 /* CharacterDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D9D2B02825200CBAA03 /* CharacterDetailAssembly.swift */; };
+		AD402DA02B02AA5F00CBAA03 /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402D9F2B02AA5E00CBAA03 /* CharacterListViewController.swift */; };
+		AD402DA22B03829800CBAA03 /* TestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD402DA12B03829700CBAA03 /* TestResult.swift */; };
 		ADFECCA32AF65AAE001FF541 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFECCA22AF65AAE001FF541 /* AppDelegate.swift */; };
 		ADFECCA52AF65AAE001FF541 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADFECCA42AF65AAE001FF541 /* SceneDelegate.swift */; };
 		ADFECCAC2AF65AB0001FF541 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADFECCAB2AF65AB0001FF541 /* Assets.xcassets */; };
@@ -178,6 +180,8 @@
 		AD402D982B01565B00CBAA03 /* Character.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Character.strings; sourceTree = "<group>"; };
 		AD402D9A2B027C8C00CBAA03 /* EpisodeDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailAssembly.swift; sourceTree = "<group>"; };
 		AD402D9D2B02825200CBAA03 /* CharacterDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailAssembly.swift; sourceTree = "<group>"; };
+		AD402D9F2B02AA5E00CBAA03 /* CharacterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
+		AD402DA12B03829700CBAA03 /* TestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResult.swift; sourceTree = "<group>"; };
 		ADFECC9F2AF65AAE001FF541 /* RickAndMorty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMorty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADFECCA22AF65AAE001FF541 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADFECCA42AF65AAE001FF541 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -440,6 +444,7 @@
 			children = (
 				AD402D452AFCCA7E00CBAA03 /* EpisodeResult.swift */,
 				AD402D792AFE616F00CBAA03 /* CharacterResult.swift */,
+				AD402DA12B03829700CBAA03 /* TestResult.swift */,
 			);
 			path = Results;
 			sourceTree = "<group>";
@@ -549,6 +554,7 @@
 		AD402D872AFFB40A00CBAA03 /* Character */ = {
 			isa = PBXGroup;
 			children = (
+				AD402D9F2B02AA5E00CBAA03 /* CharacterListViewController.swift */,
 				AD402D6E2AFE57DE00CBAA03 /* CharacterCell.swift */,
 				AD402D702AFE5A5300CBAA03 /* CharacterCellViewModel.swift */,
 				AD402D882AFFB42B00CBAA03 /* CharacterDetail */,
@@ -852,6 +858,7 @@
 				AD402CD92AF8D4BE00CBAA03 /* SceneAssembly.swift in Sources */,
 				AD402D492AFCCAB500CBAA03 /* DomainConvertable.swift in Sources */,
 				AD402CE42AF8D8C100CBAA03 /* MenuCell.swift in Sources */,
+				AD402DA22B03829800CBAA03 /* TestResult.swift in Sources */,
 				AD402CBF2AF7A20900CBAA03 /* TextStyle.swift in Sources */,
 				AD402CD52AF8D08800CBAA03 /* DIContainer.swift in Sources */,
 				AD402D6D2AFE3FC800CBAA03 /* EpisodeDetailViewController.swift in Sources */,
@@ -889,6 +896,7 @@
 				AD175B532AF79A7B008684F5 /* MenuViewModel.swift in Sources */,
 				ADFECCA32AF65AAE001FF541 /* AppDelegate.swift in Sources */,
 				AD402D752AFE5B7400CBAA03 /* CharacterApi.swift in Sources */,
+				AD402DA02B02AA5F00CBAA03 /* CharacterListViewController.swift in Sources */,
 				AD402D582AFCD3EF00CBAA03 /* EpisodeCellViewModel.swift in Sources */,
 				AD175B5D2AF79E3C008684F5 /* WelcomeViewController.swift in Sources */,
 				AD402CC42AF7A3F300CBAA03 /* R.generated.swift in Sources */,
