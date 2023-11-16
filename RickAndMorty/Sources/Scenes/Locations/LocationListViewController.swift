@@ -1,24 +1,23 @@
 //
-//  EpisodesViewController.swift
+//  LocationListViewController.swift
 //  RickAndMorty
 //
-//  Created by Артём Бацанов on 06.11.2023.
+//  Created by Артём Бацанов on 16.11.2023.
 //
 
 import UIKit
 
-class EpisodesViewController: BaseViewController {
+class LocationListViewController: BaseViewController {
     // MARK: - Properties
     private var prefetchDataSource: TableViewDataSourcePrefetching?
-
-    private let dataSource = TableViewDataSource()
     
+    private let dataSource = TableViewDataSource()
     private let tableView = UITableView()
     
-    private let viewModel: EpisodesViewModel
+    private let viewModel: LocationListViewModel
     
     // MARK: - Init
-    init(viewModel: EpisodesViewModel) {
+    init(viewModel: LocationListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -31,8 +30,8 @@ class EpisodesViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        viewModel.viewIsReady()
         setupBindables()
+        viewModel.viewIsReady()
     }
     
     // MARK: - Setup
@@ -42,14 +41,10 @@ class EpisodesViewController: BaseViewController {
     
     private func setupTableView() {
         view.addSubview(tableView)
-        tableView.backgroundColor = .accentYellow
-        tableView.rowHeight = 60
-        tableView.estimatedRowHeight = UITableView.automaticDimension
+        tableView.rowHeight = 80
+        tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
-        tableView.showsVerticalScrollIndicator = false
-        tableView.separatorColor = .baseBlack
-        tableView.register(EpisodeCell.self, forCellReuseIdentifier: EpisodeCell.reuseIdentifier)
-        tableView.register(EpisodeHeaderView.self, forHeaderFooterViewReuseIdentifier: EpisodeHeaderView.reuseIdentifier)
+        tableView.register(LocationCell.self, forCellReuseIdentifier: LocationCell.reuseIdentifier)
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -57,8 +52,8 @@ class EpisodesViewController: BaseViewController {
     }
     
     // MARK: - Private methods
-    private func reloadTableView() {
-        prefetchDataSource = TableViewDataSourcePrefetching(cellCount: viewModel.episodes.count,
+    private func reloadTableView(with state: SimpleViewState<LocationModel>) {
+        prefetchDataSource = TableViewDataSourcePrefetching(cellCount: viewModel.locations.count,
                                                             needsPrefetch: viewModel.needsPrefetch) { [weak self] in
             self?.viewModel.viewIsReady()
         }
@@ -68,9 +63,9 @@ class EpisodesViewController: BaseViewController {
     
     // MARK: - Bindables
     private func setupBindables() {
-        viewModel.viewState.bind { [weak self] _ in
+        viewModel.viewState.bind { [weak self] state in
             DispatchQueue.main.async {
-                self?.reloadTableView()
+                self?.reloadTableView(with: state)
             }
         }
     }

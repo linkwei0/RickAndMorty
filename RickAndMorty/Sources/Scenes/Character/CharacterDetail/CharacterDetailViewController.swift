@@ -34,8 +34,13 @@ class CharacterDetailViewController: BaseViewController {
     
     // MARK: - Setup
     private func setup() {
+        setupBackground()
         setupIconImageView()
         setupCharacterPageView()
+    }
+    
+    private func setupBackground() {
+        view.backgroundColor = .baseWhite
     }
     
     private func setupIconImageView() {

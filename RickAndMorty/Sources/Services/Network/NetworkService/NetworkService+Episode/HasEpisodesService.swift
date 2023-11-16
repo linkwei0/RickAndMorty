@@ -7,10 +7,10 @@
 
 import Foundation
 
-protocol HasEpisodesService {
-    var episodesService: EpisodesProtocol { get }
-}
-
-protocol EpisodesProtocol {
-    func getEpisodes(completion: @escaping (Result<[EpisodeApi], Error>) -> Void)
-}
+//protocol HasEpisodesService {
+//    var episodesService: EpisodesProtocol { get }
+//}
+//
+//protocol EpisodesProtocol {
+//    func getEpisodes(completion: @escaping (Result<[EpisodeApi], Error>) -> Void)
+//}

@@ -8,8 +8,9 @@
 import Foundation
 
 protocol CharacterServiceProtocol {
-    func getCharacters(page: Int, completion: @escaping (Result<TestResult, NetworkError>) -> Void)
-    func getCharactersByEpisode(with charadcterIDs: String, completion: @escaping (Result<CharacterResult, NetworkError>) -> Void)
+    func getCharacters(page: Int, completion: @escaping (Result<CharacterResult, NetworkError>) -> Void)
+    func getCharactersByEpisode(with charadcterIDs: String,
+                                completion: @escaping (Result<CharacterByEpisodeResult, NetworkError>) -> Void)
 }
 
 class CharacterService: NetworkService, CharacterServiceProtocol {
@@ -25,13 +26,13 @@ class CharacterService: NetworkService, CharacterServiceProtocol {
         self.init(configuration: configuration)
     }
     
-    func getCharacters(page: Int, completion: @escaping (Result<TestResult, NetworkError>) -> Void) {
+    func getCharacters(page: Int, completion: @escaping (Result<CharacterResult, NetworkError>) -> Void) {
         let request = CharacterEndpoint.getCharacters(page: page).request
         fetch(with: request, completion: completion)
     }
     
     func getCharactersByEpisode(with charadcterIDs: String,
-                                completion: @escaping (Result<CharacterResult, NetworkError>) -> Void) {
+                                completion: @escaping (Result<CharacterByEpisodeResult, NetworkError>) -> Void) {
         let request = CharacterEndpoint.getCharactersByEpisode(charactersIDs: charadcterIDs).request
         fetch(with: request, completion: completion)
     }
