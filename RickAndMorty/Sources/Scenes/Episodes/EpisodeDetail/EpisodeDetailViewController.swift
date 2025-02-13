@@ -42,9 +42,8 @@ class EpisodeDetailViewController: BaseViewController {
     
     private func setupTableView() {
         view.addSubview(tableView)
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        tableView.rowHeight = 120
-        tableView.estimatedRowHeight = 120
+        tableView.rowHeight = 140
+        tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorColor = .baseBlack
         tableView.register(CharacterCell.self, forCellReuseIdentifier: CharacterCell.reuseIdentifier)

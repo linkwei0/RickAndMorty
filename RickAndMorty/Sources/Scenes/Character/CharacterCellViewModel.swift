@@ -19,12 +19,24 @@ class CharacterCellViewModel {
         return character.name
     }
     
-    var status: String {
-        return character.status.rawValue
+    var species: String {
+        let text = character.species.rawValue + ", " + character.gender.rawValue
+        return text
+    }
+    
+    var status: Status {
+        return character.status
     }
     
     var statusColor: UIColor {
-        return character.status.isAlive ? .accentGreen : .accentRed
+        switch character.status {
+        case .alive:
+            return .accentGreen
+        case .dead:
+            return .accentRed
+        case .unknown:
+            return .darkGray
+        }
     }
     
     var imageData: Data? {

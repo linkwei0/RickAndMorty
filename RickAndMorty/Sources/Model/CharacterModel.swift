@@ -128,15 +128,14 @@ enum Status: RawRepresentable {
         }
     }
     
-    var isAlive: Bool {
+    var isAlive: Bool? {
         switch self {
         case .alive:
             return true
         case .dead:
             return false
         case .unknown:
-            return true
+            return nil
         }
     }
 }
-

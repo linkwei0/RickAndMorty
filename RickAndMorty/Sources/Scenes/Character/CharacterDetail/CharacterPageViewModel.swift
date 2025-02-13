@@ -47,7 +47,7 @@ enum CharacterPageItemType {
     var textColor: UIColor {
         switch self {
         case .status(let status):
-            if status.isAlive || status == .unknown {
+            if (status.isAlive ?? true) || status == .unknown {
                 return .accentGreen
             } else {
                 return .accentRed
