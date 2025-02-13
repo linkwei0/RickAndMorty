@@ -96,7 +96,7 @@ class CharacterCell: UITableViewCell, TableCell {
     private func setupCharacterInfoStackView() {
         contentView.addSubview(characterInfoStackView)
         characterInfoStackView.axis = .vertical
-        characterInfoStackView.spacing = 10
+        characterInfoStackView.spacing = 8
         characterInfoStackView.snp.makeConstraints { make in
             make.centerY.equalTo(mainImageView.snp.centerY)
             make.leading.equalTo(mainImageView.snp.trailing).offset(12)
@@ -108,7 +108,7 @@ class CharacterCell: UITableViewCell, TableCell {
         characterInfoStackView.addArrangedSubview(stackView)
         
         stackView.axis = .vertical
-        stackView.spacing = 4
+        stackView.spacing = 2
         
         nameLabel.numberOfLines = 0
         nameLabel.textColor = .baseBlack
