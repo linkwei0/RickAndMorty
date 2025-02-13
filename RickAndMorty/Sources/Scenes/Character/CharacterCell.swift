@@ -81,15 +81,10 @@ class CharacterCell: UITableViewCell, TableCell {
     
     private func setupStatusLabel() {
         contentView.addSubview(statusLabel)
-        
         statusLabel.numberOfLines = 1
         statusLabel.textAlignment = .center
-        statusLabel.font = .systemFont(ofSize: 14, weight: .bold)
         statusLabel.layer.cornerRadius = 12
         statusLabel.clipsToBounds = true
-        
-        statusLabel.setContentHuggingPriority(.required, for: .horizontal)
-        statusLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
         
         statusLabel.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(12)
@@ -101,9 +96,9 @@ class CharacterCell: UITableViewCell, TableCell {
     private func setupCharacterInfoStackView() {
         contentView.addSubview(characterInfoStackView)
         characterInfoStackView.axis = .vertical
-        characterInfoStackView.spacing = 12
+        characterInfoStackView.spacing = 10
         characterInfoStackView.snp.makeConstraints { make in
-            make.top.equalTo(mainImageView.snp.top)
+            make.centerY.equalTo(mainImageView.snp.centerY)
             make.leading.equalTo(mainImageView.snp.trailing).offset(12)
         }
     }
@@ -115,7 +110,7 @@ class CharacterCell: UITableViewCell, TableCell {
         stackView.axis = .vertical
         stackView.spacing = 4
         
-        nameLabel.numberOfLines = 1
+        nameLabel.numberOfLines = 0
         nameLabel.textColor = .baseBlack
         nameLabel.lineBreakMode = .byTruncatingTail
         stackView.addArrangedSubview(nameLabel)
