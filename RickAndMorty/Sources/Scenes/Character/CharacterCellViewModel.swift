@@ -20,8 +20,11 @@ class CharacterCellViewModel {
     }
     
     var species: String {
-        let text = character.species.rawValue + ", " + character.gender.rawValue
-        return text
+        if character.species.rawValue.isEmpty {
+            return character.gender.rawValue
+        } else {
+            return character.species.rawValue + ", " + character.gender.rawValue
+        }
     }
     
     var status: Status {
