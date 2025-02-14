@@ -79,20 +79,6 @@ class CharacterCell: UITableViewCell, TableCell {
         }
     }
     
-    private func setupStatusLabel() {
-        contentView.addSubview(statusLabel)
-        statusLabel.numberOfLines = 1
-        statusLabel.textAlignment = .center
-        statusLabel.layer.cornerRadius = 12
-        statusLabel.clipsToBounds = true
-        statusLabel.font = .systemFont(ofSize: 14)
-        
-        statusLabel.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(12)
-            make.top.equalTo(mainImageView.snp.top)
-        }
-    }
-    
     private func setupCharacterInfoStackView() {
         contentView.addSubview(characterInfoStackView)
         characterInfoStackView.axis = .vertical
@@ -110,7 +96,7 @@ class CharacterCell: UITableViewCell, TableCell {
         stackView.axis = .vertical
         stackView.spacing = 2
         
-        nameLabel.numberOfLines = 2
+        nameLabel.numberOfLines = 1
         nameLabel.textColor = .baseBlack
         nameLabel.lineBreakMode = .byTruncatingTail
         nameLabel.font = .systemFont(ofSize: 21, weight: .medium)
@@ -153,6 +139,20 @@ class CharacterCell: UITableViewCell, TableCell {
         locationStackView.addArrangedSubview(locationIcon)
         locationStackView.addArrangedSubview(locationLabel)
         characterInfoStackView.addArrangedSubview(locationStackView)
+    }
+    
+    private func setupStatusLabel() {
+        contentView.addSubview(statusLabel)
+        statusLabel.numberOfLines = 1
+        statusLabel.textAlignment = .center
+        statusLabel.layer.cornerRadius = 12
+        statusLabel.clipsToBounds = true
+        statusLabel.font = .systemFont(ofSize: 14)
+        
+        statusLabel.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(12)
+            make.top.equalTo(mainImageView.snp.top)
+        }
     }
     
     // MARK: - Private methods
