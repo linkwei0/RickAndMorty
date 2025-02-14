@@ -109,11 +109,11 @@ enum Status: RawRepresentable {
     var rawValue: String {
         switch self {
         case .alive:
-            return R.string.character.characterStatusAlive()
+            return "alive" //R.string.character.characterStatusAlive()
         case .dead:
-            return R.string.character.characterStatusDead()
+            return "dead" //R.string.character.characterStatusDead()
         case .unknown:
-            return R.string.character.characterStatusUnknown()
+            return "unknown" //R.string.character.characterStatusUnknown()
         }
     }
     

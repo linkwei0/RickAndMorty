@@ -11,11 +11,11 @@ class CharacterCell: UITableViewCell, TableCell {
     // MARK: - Properties
     private let mainImageView = UIImageView()
     private let characterInfoStackView = UIStackView()
-    private let nameLabel = Label(textStyle: .bodyBold)
-    private let speciesLabel = Label(textStyle: .footnote)
+    private let nameLabel = UILabel()
+    private let speciesLabel = UILabel()
     private let watchEpisodesButton = UIButton()
-    private let locationLabel = Label(textStyle: .smallFootnote)
-    private let statusLabel = Label(textStyle: .footnote)
+    private let locationLabel = UILabel()
+    private let statusLabel = UILabel()
     
     private var viewModel: CharacterCellViewModel?
     
@@ -46,7 +46,7 @@ class CharacterCell: UITableViewCell, TableCell {
         
         statusLabel.snp.remakeConstraints { make in
             make.trailing.equalToSuperview().inset(12)
-            make.top.equalTo(mainImageView.snp.top).inset(8)
+            make.top.equalTo(mainImageView.snp.top)
             make.height.equalTo(24)
             make.width.equalTo(statusLabel.intrinsicContentSize.width + 12)
         }
@@ -57,11 +57,11 @@ class CharacterCell: UITableViewCell, TableCell {
     private func setup() {
         setupBackground()
         setupMainImageView()
-        setupStatusLabel()
         setupCharacterInfoStackView()
         setupNameLabel()
         setupWatchEpisodesButton()
         setupLocationLabel()
+        setupStatusLabel()
     }
     
     private func setupBackground() {
@@ -85,20 +85,20 @@ class CharacterCell: UITableViewCell, TableCell {
         statusLabel.textAlignment = .center
         statusLabel.layer.cornerRadius = 12
         statusLabel.clipsToBounds = true
+        statusLabel.font = .systemFont(ofSize: 14)
         
         statusLabel.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(12)
-            make.top.equalTo(mainImageView.snp.top).inset(8)
-            make.height.equalTo(24)
+            make.top.equalTo(mainImageView.snp.top)
         }
     }
     
     private func setupCharacterInfoStackView() {
         contentView.addSubview(characterInfoStackView)
         characterInfoStackView.axis = .vertical
-        characterInfoStackView.spacing = 8
+        characterInfoStackView.spacing = 10
         characterInfoStackView.snp.makeConstraints { make in
-            make.centerY.equalTo(mainImageView.snp.centerY)
+            make.top.equalTo(mainImageView.snp.top)
             make.leading.equalTo(mainImageView.snp.trailing).offset(12)
         }
     }
@@ -110,25 +110,28 @@ class CharacterCell: UITableViewCell, TableCell {
         stackView.axis = .vertical
         stackView.spacing = 2
         
-        nameLabel.numberOfLines = 0
+        nameLabel.numberOfLines = 2
         nameLabel.textColor = .baseBlack
         nameLabel.lineBreakMode = .byTruncatingTail
+        nameLabel.font = .systemFont(ofSize: 21, weight: .medium)
         stackView.addArrangedSubview(nameLabel)
         
         speciesLabel.numberOfLines = 1
         speciesLabel.textColor = .baseBlack
+        speciesLabel.font = .systemFont(ofSize: 14)
         stackView.addArrangedSubview(speciesLabel)
     }
     
     private func setupWatchEpisodesButton() {
         characterInfoStackView.addArrangedSubview(watchEpisodesButton)
         watchEpisodesButton.setTitle("▶ Watch episodes", for: .normal)
-        watchEpisodesButton.titleLabel?.font = .systemFont(ofSize: 14, weight: .regular)
+        watchEpisodesButton.titleLabel?.font = .systemFont(ofSize: 14)
         watchEpisodesButton.setTitleColor(.orange, for: .normal)
         watchEpisodesButton.backgroundColor = UIColor.orange.withAlphaComponent(0.1)
         watchEpisodesButton.layer.cornerRadius = 16
         watchEpisodesButton.snp.makeConstraints { make in
-            make.width.equalTo(140)
+            make.width.equalTo(148)
+            make.height.equalTo(35)
         }
     }
     
@@ -146,6 +149,7 @@ class CharacterCell: UITableViewCell, TableCell {
         
         locationLabel.text = "Earth (C-500A)"
         locationLabel.textColor = .darkGray
+        locationLabel.font = .systemFont(ofSize: 14)
         locationStackView.addArrangedSubview(locationIcon)
         locationStackView.addArrangedSubview(locationLabel)
         characterInfoStackView.addArrangedSubview(locationStackView)

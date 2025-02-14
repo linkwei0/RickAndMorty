@@ -42,7 +42,8 @@ class EpisodeDetailViewController: BaseViewController {
     
     private func setupTableView() {
         view.addSubview(tableView)
-        tableView.rowHeight = 140
+        tableView.rowHeight = 150
+        tableView.estimatedRowHeight = 180
         tableView.separatorStyle = .none
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorColor = .baseBlack
